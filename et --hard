@@ -1,0 +1,160 @@
+[33mcommit 36ac1ac24a645117d21e88b2236d9586ceb3544d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: abb5ccc 868da6b
+Author: Thanh Tan Tran <102520170+WilliamTran2k3@users.noreply.github.com>
+Date:   Tue Dec 13 12:55:14 2022 +0700
+
+    Merge pull request #3 from WilliamTran2k3/dev
+    
+    merge two commit
+
+[33mcommit 868da6bb5fb5113a3eccbeb08d67e21400fcc909[m[33m ([m[1;31morigin/dev[m[33m)[m
+Author: studyuniversity <nguyentanthanh0709it@gmail.com>
+Date:   Tue Dec 13 12:53:27 2022 +0700
+
+    update
+
+[33mcommit abb5ccc2841b518ef7b03b1c498773ca04289180[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Tue Dec 13 12:52:20 2022 +0700
+
+    new update
+
+[33mcommit b4f04b21f6ebbff0beb901176a2a5b0e4a22dfae[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Sun Dec 11 23:28:44 2022 +0700
+
+    drag n drop demo
+
+[33mcommit 49d6840fa34e5c2b777f6f21cf35b6e42273470b[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Sun Dec 11 00:23:04 2022 +0700
+
+    responsive sample4 + localStorage in sample4
+
+[33mcommit b3f865f9943971492356dabfdd644d69ae01aae0[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Wed Dec 7 22:48:57 2022 +0700
+
+    update Homepage
+
+[33mcommit 362b96713c1078d3d6e1090e5bed159f4bc7dc3a[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Tue Dec 6 23:44:08 2022 +0700
+
+    update Homepage without responsive
+
+[33mcommit 4bf3018667b884f09af8adb343240a542cf3ce69[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Tue Dec 6 23:18:15 2022 +0700
+
+    upload Homepage
+
+[33mcommit 3bc9240f68d52d223940affa590f0f764ba0460c[m
+Merge: 6a3d621 2018ef5
+Author: QUỐC TOÀN ĐOÀN TRẦN <doantoan2308@gmail.com>
+Date:   Tue Dec 6 14:34:47 2022 +0700
+
+    Merge branch 'main' of https://github.com/WilliamTran2k3/web-portfolio
+
+[33mcommit 2018ef5a8477b1ab929d99c9c5dd0f01388a21cc[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Tue Dec 6 14:29:03 2022 +0700
+
+    upload
+
+[33mcommit 6a3d621d7c34980f0c68f3348a7a8ac288ccc344[m
+Author: QUỐC TOÀN ĐOÀN TRẦN <doantoan2308@gmail.com>
+Date:   Tue Dec 6 14:27:41 2022 +0700
+
+    uploadimg
+
+[33mcommit 257f33928944d36cf0dbdff37be94086fc7010f7[m
+Merge: 22f2952 b96106b
+Author: Thanh Tan Tran <102520170+WilliamTran2k3@users.noreply.github.com>
+Date:   Tue Dec 6 14:07:13 2022 +0700
+
+    Merge pull request #2 from WilliamTran2k3/dev
+    
+    upload
+
+[33mcommit b96106ba35d557d298e39b121bb37f5c840061e7[m[33m ([m[1;32mdev[m[33m)[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Tue Dec 6 14:04:43 2022 +0700
+
+    upload
+
+[33mcommit 22f29521041327d818a95373e7f153dd4661ebd4[m
+Merge: effde77 0ea42d9
+Author: Thanh Tan Tran <102520170+WilliamTran2k3@users.noreply.github.com>
+Date:   Tue Dec 6 13:29:16 2022 +0700
+
+    Merge pull request #1 from WilliamTran2k3/dev
+    
+    Dev
+
+[33mcommit 0ea42d9a54ef15c9af5cbc9173306aba4542740d[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Sun Nov 27 18:35:44 2022 +0700
+
+    update_27/12
+
+[33mcommit 94e8c4652a2f5351f24d0273029cd9e66dae5649[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Sun Nov 27 10:40:35 2022 +0700
+
+    update sample2
+
+[33mcommit effde779b6efa516f7aa30eacb1289a07b830f85[m
+Author: studyuniversity <nguyentanthanh0709it@gmail.com>
+Date:   Fri Nov 25 17:10:31 2022 +0700
+
+    update
+
+[33mcommit eaba8f10afd71c9d90dc709c0720674c1e3f1cde[m
+Author: studyuniversity <nguyentanthanh0709it@gmail.com>
+Date:   Fri Nov 25 16:38:39 2022 +0700
+
+    update
+
+[33mcommit 91feb84df954bdee1099f46796f4660c304281a7[m
+Author: studyuniversity <nguyentanthanh0709it@gmail.com>
+Date:   Fri Nov 25 16:36:06 2022 +0700
+
+    update
+
+[33mcommit 4256c8085694437d889c2bd02b7d22f16015862a[m
+Merge: a7012d6 d802ba7
+Author: studyuniversity <nguyentanthanh0709it@gmail.com>
+Date:   Fri Nov 25 16:34:24 2022 +0700
+
+    update
+
+[33mcommit a7012d604e824210490adc8b130092c5f51d0d70[m
+Author: studyuniversity <nguyentanthanh0709it@gmail.com>
+Date:   Fri Nov 25 16:31:21 2022 +0700
+
+    update
+
+[33mcommit d802ba7fa97aa4aa2f0f2d89ba1b18a6ae478c65[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Fri Nov 25 16:04:21 2022 +0700
+
+    update
+
+[33mcommit a036d38dde0baa6a3c79c7c032b4ca2c2a72dfaf[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Fri Nov 25 15:47:45 2022 +0700
+
+    new update
+
+[33mcommit 7b44dbca158cdd6f45d592c413116f982fcdee13[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Thu Nov 24 20:23:25 2022 +0700
+
+    upload components
+
+[33mcommit 38cc94dd789c498e4162477977636d7b3a2dc481[m
+Author: WilliamTran2k3 <trantanthanh9a10@gmail.com>
+Date:   Wed Nov 23 14:31:07 2022 +0700
+
+    Initialize project using Create React App

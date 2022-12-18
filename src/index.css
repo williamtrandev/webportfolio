@@ -1,0 +1,6 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster+Two&family=Merienda&family=Pacifico&family=Playfair+Display&family=Zen+Dots&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

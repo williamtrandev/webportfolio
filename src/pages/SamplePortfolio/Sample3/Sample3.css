@@ -1,0 +1,143 @@
+
+#Sample2::before{
+    content: "";
+    position: fixed;
+    background: #040404 url(https://media.zicxa.com/334704) top right no-repeat;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: -1;    
+}
+
+
+/* #Sample2__header h1 a, #header h1 a:hover {
+    color: #fff;
+    line-height: 1;
+    display: inline-block;
+} */
+
+#Sample2__header .container h2 span {
+    border-bottom: 2px solid #18d26e;
+}
+
+.nav-link.active{
+    border-bottom: 2px solid #18d26e;
+}
+
+.navbar ul li :hover{
+    border-bottom: 2px solid #18d26e;
+}
+
+
+.navbar{
+    background-color: transparent;
+    padding: 0;
+
+    color: rgba(255,255,255,0.6);
+    font-size: 21px;
+}
+
+#Sample2__header{
+    transition: ease-in-out 0.3s;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    padding: 0 80px;
+    align-items: center;
+    z-index: 40;
+    overflow-y: auto;
+}
+/* #Sample2__header .container h1{
+    margin-bottom: 6px;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+
+} */
+
+section#sample3 {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 140px;
+    bottom: 100%;
+    opacity: 1; 
+    transition: ease-in-out 0.3s;
+    z-index: 2;
+    display: block;
+}
+
+.credits{
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    z-index: 999999;
+    font-size: 14px;
+}
+
+.social-links p {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    line-height: 1;
+
+    margin-right: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  #Sample2__header.header-top {
+    height: 87px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+.section-show {
+    top: 80px;
+    bottom: auto;
+    opacity: 1;
+    padding-bottom: 45px;
+}
+
+.title h2::after{
+    content: "";
+    position: absolute;
+    border-top: 1.4px solid #18d26e;
+    left: 170px;
+    top: 22px;
+    width: 100px;
+}
+
+.congviec:hover .dieukhien{
+    opacity: 1;
+}
+
+.border__full::after{
+        content: "";
+    top: 0;
+    /* border: 3px solid transparent; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* .border__full:hover .remove{
+    opacity: 1;
+} */
