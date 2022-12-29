@@ -49,7 +49,7 @@ function CreatePortfolio() {
                 <div className="relative overflow-y-scroll h-full">
                         {/* <Toolbar isEnable={true}></Toolbar> */}
 
-                    <div className="pt-[40px] min-w-full min-h-full flex flex-col items-center justify-center">
+                    <div className="min-w-full min-h-full flex flex-col items-center justify-center">
                         {page.map((num, index) => (
                             <Page key={num} index={index}></Page>
                         ))}
