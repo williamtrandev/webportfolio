@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import Box from "../DrapAndDrop/Box";
-import ThanhKE from "../DrapAndDrop/ThanhKe";
-import Image from "../DrapAndDrop/Image";
+import Box from "../DragAndDrop/Box";
+import ThanhKE from "../DragAndDrop/ThanhKe";
+import Image from "../DragAndDrop/Image";
 function About1() {
     const height = window.innerHeight-50 ;
     const width = (window.innerWidth - 348) * 0.9;
     return (
-        <div className="w-full h-[600px] relative bg-red-400 text-yellow-200">
+        <div className="changeClass w-full h-[600px] relative bg-red-400 text-yellow-200">
             <Box
                 item={"By TSIMPLE"}
                 width={210}

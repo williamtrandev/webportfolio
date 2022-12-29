@@ -112,56 +112,74 @@ function Resume2() {
         setEXP(newGT);
         
       };
-    return ( 
-        <section name="resume" className="pt-[100px]  my-12">
+    return (
+        <section name="resume" className="pt-[100px]  my-12" spellCheck="false">
             <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className="flex justify-center pb-4 ">
                     <h4 className="uppercase inline font-bold pb-2 border-b-2 border-pink-300 text-cyan-500">
                         Resume
                     </h4>
                 </div>
-                <p className="text-center text-lg pb-12" contentEditable
-                    suppressContentEditableWarning={true}   > Các chặng đường của mình^^</p>
-                
+                <p
+                    className="text-center text-lg pb-12"
+                    contentEditable
+                    suppressContentEditableWarning={true}
+                >
+                    {" "}
+                    Các chặng đường của mình^^
+                </p>
+
                 <div>
                     {/* 2 */}
-                  <div className="" id="Sample2_edu">
-                    <h3 className="text-6xl text-pink-300">Education</h3>
+                    <div className="" id="Sample2_edu">
+                        <h3 className="text-6xl text-pink-300">Education</h3>
 
-                    {edu.map((item, index) => (
-                        
-                        <div key={index} data-key={item.id} className="px-6 py-4 relative congviec" >
-                            <Edu classname={"!text-cyan-500"} item={item}/>
-                            <Plusbin keyIndex={item.id} classname={'dieukhien top-0 opacity-0 -left-7'} onClickfuncADD={ADDElement3} onClickfuncDELETE={DELETEElement3} />
-                        </div>
-                        
-                    ))}
-                    
-
-                  </div>
-
+                        {edu.map((item, index) => (
+                            <div
+                                key={index}
+                                data-key={item.id}
+                                className="px-6 py-4 relative congviec"
+                            >
+                                <Edu classname={"!text-cyan-500"} item={item} />
+                                <Plusbin
+                                    keyIndex={item.id}
+                                    classname={
+                                        "dieukhien top-0 opacity-0 -left-7"
+                                    }
+                                    onClickfuncADD={ADDElement3}
+                                    onClickfuncDELETE={DELETEElement3}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 {/* 22222222222222222 */}
                 <div className="" id="Sample2_exp">
-                <h3 className="text-6xl text-pink-300">Professional Experience</h3>
-                {/* 1 */}
-                    
+                    <h3 className="text-6xl text-pink-300">
+                        Professional Experience
+                    </h3>
+                    {/* 1 */}
+
                     {/* 2 */}
                     {exp.map((item, index) => (
-                        
-                        <div  key={index} data-key={item.id} className="px-6 py-4 relative congviec">
-                        <Exp item={item}/>
-                        <Plusbin keyIndex={item.id} classname={'dieukhien top-0 opacity-0 -left-7'} onClickfuncADD={ADDElement4} onClickfuncDELETE={DELETEElement4} />
-                            
-                    </div>
-                        
+                        <div
+                            key={index}
+                            data-key={item.id}
+                            className="px-6 py-4 relative congviec"
+                        >
+                            <Exp item={item} />
+                            <Plusbin
+                                keyIndex={item.id}
+                                classname={"dieukhien top-0 opacity-0 -left-7"}
+                                onClickfuncADD={ADDElement4}
+                                onClickfuncDELETE={DELETEElement4}
+                            />
+                        </div>
                     ))}
-
                 </div>
-                
             </div>
         </section>
-     );
+    );
 }
 
 export default Resume2;

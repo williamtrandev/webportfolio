@@ -95,8 +95,10 @@ export default function Portfolio2() {
 
     return (
         <section
-            name="portfolio"  id="project2"
+            name="portfolio"
+            id="project2"
             className=" my-12 pt-[100px]  "
+            spellCheck="false"
         >
             <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className="flex justify-center pb-8">
@@ -107,11 +109,17 @@ export default function Portfolio2() {
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
                     {pro.map((item) => (
                         <div
-                            key={item.id} data-key={item.id}
+                            key={item.id}
+                            data-key={item.id}
                             className="relative congviec w-auto shadow-md shadow-gray-600 rounded-lg cursor-pointer"
                         >
-                            <Pro2 item={item}/>
-                            <Plusbin  keyIndex={item.id}  classname={"dieukhien opacity-0 -left-4 -top-0"} onClickfuncADD={ADDElement1} onClickfuncDELETE={DELETEElement1}/>
+                            <Pro2 item={item} />
+                            <Plusbin
+                                keyIndex={item.id}
+                                classname={"dieukhien opacity-0 -left-4 -top-0"}
+                                onClickfuncADD={ADDElement1}
+                                onClickfuncDELETE={DELETEElement1}
+                            />
                         </div>
                     ))}
                 </div>

@@ -72,66 +72,99 @@ function Skill2() {
       };
 
 
-    return ( 
+    return (
         <section
-        name="skills" id="skill2"
-        className="my-12 pt-[100px] ">
-        <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+            name="skills"
+            id="skill2"
+            className="my-12 pt-[100px] "
+            spellCheck="false"
+        >
+            <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className="flex justify-center pb-4 ">
                     <h4 className="uppercase inline font-bold pb-2 border-b-2 border-pink-300 text-cyan-500">
                         Skills
                     </h4>
                 </div>
-                <p className="text-center text-lg pb-12" contentEditable
-                    suppressContentEditableWarning={true} > Kĩ năng của tụi mình </p>
-                
+                <p
+                    className="text-center text-lg pb-12"
+                    contentEditable
+                    suppressContentEditableWarning={true}
+                >
+                    {" "}
+                    Kĩ năng của tụi mình{" "}
+                </p>
+
                 <div>
-                <div className="flex flex-col bg-black/40 p-8 m-4 flex-wrap">
-                    {kn2.map((item) => (
-                        <div key={item.id} data-key={item.id} className="relative congviec">
-                            <Skills item={item}/>
-                            <Plusbin  keyIndex={item.id}  classname={"dieukhien opacity-0 -left-5 -top-0"} onClickfuncADD={ADDElement1} onClickfuncDELETE={DELETEElement1}/>
-
-                        </div>
-                    ))}
+                    <div className="flex flex-col bg-black/40 p-8 m-4 flex-wrap">
+                        {kn2.map((item) => (
+                            <div
+                                key={item.id}
+                                data-key={item.id}
+                                className="relative congviec"
+                            >
+                                <Skills item={item} />
+                                <Plusbin
+                                    keyIndex={item.id}
+                                    classname={
+                                        "dieukhien opacity-0 -left-5 -top-0"
+                                    }
+                                    onClickfuncADD={ADDElement1}
+                                    onClickfuncDELETE={DELETEElement1}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                </div>
-                <div className="flex justify-between text-white pt-2 bg-white/10 py-6 rounded px-4">
-
-            <div className="flex items-center flex-col ">
-                    <FaSmile className="py-1 text-blue-500 text-4xl" />
-                    <span contentEditable
-                    suppressContentEditableWarning={true} className="py-1">10</span>
-                    <p className="py-1">Hạnh phúc</p>
-
-            </div>
-            <div className="flex items-center flex-col">
+                {/* <div className="flex justify-between text-white pt-2 bg-white/10 py-6 rounded px-4">
+                    <div className="flex items-center flex-col ">
+                        <FaSmile className="py-1 text-blue-500 text-4xl" />
+                        <span
+                            contentEditable
+                            suppressContentEditableWarning={true}
+                            className="py-1"
+                        >
+                            10
+                        </span>
+                        <p className="py-1">Hạnh phúc</p>
+                    </div>
+                    <div className="flex items-center flex-col">
                         <FaRegClock className="py-1 text-blue-500 text-4xl" />
-                        <span contentEditable
-                    suppressContentEditableWarning={true} className="py-1">10</span>
+                        <span
+                            contentEditable
+                            suppressContentEditableWarning={true}
+                            className="py-1"
+                        >
+                            10
+                        </span>
                         <p className="py-1">Số giờ làm việc</p>
-            </div>
+                    </div>
 
-            <div className="flex items-center flex-col">
+                    <div className="flex items-center flex-col">
                         <FaAward className="py-1 text-blue-500 text-4xl" />
-                        <span contentEditable
-                    suppressContentEditableWarning={true} className="py-1">10</span>
-                        <p className="py-1">Giải thưởng</p>  
-            </div>
+                        <span
+                            contentEditable
+                            suppressContentEditableWarning={true}
+                            className="py-1"
+                        >
+                            10
+                        </span>
+                        <p className="py-1">Giải thưởng</p>
+                    </div>
 
-            <div className="flex items-center flex-col">
+                    <div className="flex items-center flex-col">
                         <FaHeadphones className="py-1 text-blue-500 text-4xl" />
-                        <span contentEditable
-                    suppressContentEditableWarning={true} className="py-1">10</span>
+                        <span
+                            contentEditable
+                            suppressContentEditableWarning={true}
+                            className="py-1"
+                        >
+                            10
+                        </span>
                         <p className="py-1">Dự án hoàn thành</p>
-            </div> 
-
-        </div >
-        </div>
-
-        
-                        
+                    </div>
+                </div> */}
+            </div>
         </section>
-     );
+    );
 }
 export default Skill2;

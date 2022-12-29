@@ -18,29 +18,34 @@ export default function About2() {
         setAva(file.preview);
     };
     return (
-        <section name="about" className="">
+        <section name="about" className="" spellCheck="false">
             <div className="max-w-screen-lg p-4 mx-auto my-12 pt-[100px] flex flex-col justify-center w-full h-full">
                 <div className="flex justify-center pb-4 ">
                     <h4 className="uppercase inline font-bold pb-2 border-b-2 border-pink-300 text-cyan-500">
                         About Me
                     </h4>
                 </div>
-                <p
-                    className="text-center text-lg pb-12"
-                    contentEditable
-                    suppressContentEditableWarning={true}
-                >
-                    {" "}
-                    Là một sinh viên năm 2 tại trường Tôn Đức Thắng
-                </p>
+                <div className="">
+                    <p
+                        className="text-center text-lg p-[10px]"
+                        contentEditable
+                        suppressContentEditableWarning={true}
+                    >
+                        {" "}
+                        Là một sinh viên năm 2 tại trường Tôn Đức Thắng
+                    </p>
+                </div>
                 <div className="flex justify-between  items-center">
-                    <div className="relative rounded-full w-[1000px] h-[211  px] mx-6">
+                    <div className="relative rounded-full w-[1000px] h-[211px] mx-6">
                         <input
-                            className="absolute opacity-0 top-0 left-0 w-[100%] h-[100%]"
+                            className="absolute opacity-0 top-0 left-0 w-[100%] h-[100%] cursor-pointer"
                             type={"file"}
                             onChange={handleAva}
                         />
-                        <img src={ava} className="rounded-full "></img>
+                        <img
+                            src={ava}
+                            className="rounded-full h-full w-full object-cover"
+                        ></img>
                     </div>
                     <div>
                         <p

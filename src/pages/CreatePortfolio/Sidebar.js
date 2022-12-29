@@ -13,6 +13,7 @@ import contact1 from "../../assets/contact1.png";
 import { HiHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import config from "../../config";
+import { type } from "@testing-library/user-event/dist/type";
 export default function Sidebar() {
     const sampleItems = [
         {
@@ -178,6 +179,57 @@ export default function Sidebar() {
         });
         setOpen(false);
     };
+    const handleDownload = () => {
+        const webBody = document.getElementById("portfolio").cloneNode(true);
+        const pages = webBody.getElementsByClassName("Page");
+        console.log(pages);
+
+        const hiddenAdd = webBody.getElementsByClassName("removeAdd")[0];
+        hiddenAdd.classList.add("hidden");
+        [...pages].forEach((pageItem) => {
+            const div = document.createElement("div");
+            div.classList.add("relative", "w-full", "h-full");
+            const childItems = pageItem.getElementsByClassName("changeClass");
+            [...childItems].forEach((child) => {
+                child.classList.add("!h-screen");
+                div.appendChild(child);
+            });
+            pageItem.classList.add(
+                "!w-full",
+                "!max-w-full",
+                "!h-screen",
+                "!mt-0",
+                "!border-none"
+            );
+            pageItem.appendChild(div);
+            // console.log(pageItem);
+        });
+        const data = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Web Portfolio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body>
+            ${webBody.outerHTML}
+        </body>
+        </html>`;
+        const filename = "webportfolio.html";
+        const blob = new Blob([data], { type: "text/plain" });
+        if (window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, filename);
+        } else {
+            const elem = window.document.createElement("a");
+            elem.href = window.URL.createObjectURL(blob);
+            elem.download = filename;
+            document.body.appendChild(elem);
+            elem.click();
+            document.body.removeChild(elem);
+        }
+    };
 
     const navItems = [
         {
@@ -235,7 +287,10 @@ export default function Sidebar() {
                             <p className="text-[15px]">{title}</p>
                         </li>
                     ))}
-                    <div className="flex flex-col justify-center items-center bg-cyan-900">
+                    <div
+                        className="h-[98px] w-[98px] flex flex-col justify-center items-center bg-cyan-900 cursor-pointer hover:text-white bg-cyan-900"
+                        onClick={handleDownload}
+                    >
                         <button className="mt-[5px] w-[30px] h-[30px] rounded-[50%] bg-white"></button>
                         <span className="text-[15px]">Download</span>
                     </div>

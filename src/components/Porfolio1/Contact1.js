@@ -1,16 +1,25 @@
 import { BiCurrentLocation, BiMailSend } from "react-icons/bi";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiMailOpen } from "react-icons/hi";
-import Box from "../DrapAndDrop/Box";
-import Image from "../DrapAndDrop/Image";
+import Box from "../DragAndDrop/Box";
+import Image from "../DragAndDrop/Image";
+import { useState, useEffect } from "react";
+
 export default function Contact1() {
-    const heightBox = window.innerHeight;
-    const widthBox = (window.innerWidth - 348) * 0.9;
-    console.log(heightBox, widthBox);
+    const wrapper = document.getElementsByClassName("Page")[0];
+    const [state, setState] = useState({
+        height: wrapper.offsetHeight,
+        width: wrapper.offsetWidth,
+    });
+    // const heightBox = wrapper.offsetHeight;
+    // const widthBox = wrapper.offsetWidth;
+    // console.log(heightBox, widthBox);
+    // console.log(dimensions.width, dimensions.height);
+    // console.log(typeof(size));
     return (
         <div
             id="movable"
-            className="flex flex-col items-center w-full h-[600px] text-white"
+            className="changeClass flex justify-center items-center w-full h-[600px] text-white"
             style={{
                 backgroundImage: `url("https://wallpaperaccess.com/full/3124512.jpg")`,
                 backgroundSize: "cover",
@@ -21,12 +30,12 @@ export default function Contact1() {
             <Box
                 item={"CONTACT US"}
                 parent={"#movable"}
-                x={0.1 * widthBox}
-                y={0.15 * heightBox}
+                x={0.1 * state.width}
+                y={0.15 * state.height}
             ></Box>
             <Image
-                x={0.05 * widthBox}
-                y={0.25 * heightBox}
+                x={0.05 * state.width}
+                y={0.25 * state.height}
                 width={"300px"}
                 height={"300px"}
                 src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-de-thuong.jpg"
@@ -35,31 +44,31 @@ export default function Contact1() {
                 item={"Creative House"}
                 parent={"#movable"}
                 width="200px"
-                x={0.5 * widthBox}
-                y={0.3 * heightBox}
+                x={0.5 * state.width}
+                y={0.3 * state.height}
             ></Box>
 
             <Box
                 item={<BiCurrentLocation />}
                 parent={"#movable"}
                 width="50px"
-                x={0.5 * widthBox}
-                y={0.4 * heightBox}
+                x={0.5 * state.width}
+                y={0.4 * state.height}
             ></Box>
             <Box
                 item={"123 Anywhere St., Any City, ST 12345"}
                 classname="text-lg"
                 parent={"#movable"}
                 width={"450px"}
-                x={0.55 * widthBox}
-                y={0.4 * heightBox}
+                x={0.55 * state.width}
+                y={0.4 * state.height}
             ></Box>
             <Box
                 item={<BiMailSend />}
                 parent={"#movable"}
                 width="50px"
-                x={0.5 * widthBox}
-                y={0.5 * heightBox}
+                x={0.5 * state.width}
+                y={0.5 * state.height}
             ></Box>
 
             <Box
@@ -67,23 +76,23 @@ export default function Contact1() {
                 classname="text-lg"
                 parent={"#movable"}
                 width={"400px"}
-                x={0.55 * widthBox}
-                y={0.5 * heightBox}
+                x={0.55 * state.width}
+                y={0.5 * state.height}
             ></Box>
             <Box
                 item={<BsFillTelephoneFill />}
                 parent={"#movable"}
                 width="50px"
-                x={0.5 * widthBox}
-                y={0.6 * heightBox}
+                x={0.5 * state.width}
+                y={0.6 * state.height}
             ></Box>
             <Box
                 item={"+123-456-7890"}
                 classname="text-lg"
                 parent={"#movable"}
                 width={"400px"}
-                x={0.55 * widthBox}
-                y={0.6 * heightBox}
+                x={0.55 * state.width}
+                y={0.6 * state.height}
             ></Box>
         </div>
     );

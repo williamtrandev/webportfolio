@@ -24,6 +24,7 @@ function Image({
             file.preview = URL.createObjectURL(file);
             setAva(file.preview);
         };
+        input.accept = "image/*";
         input.click();
     }
 
@@ -49,7 +50,7 @@ function Image({
             minHeight={10}
             bounds={parent}
         >
-            <div className="group border__full relative w-full h-full ">
+            <div className="group relative w-full h-full ">
                 <label
                     onDoubleClick={changeIMG}
                     htmlFor="img"

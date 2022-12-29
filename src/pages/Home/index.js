@@ -3,6 +3,7 @@ import btnImg from "../../assets/btn-img.jpg";
 import Header from "../../components/Layout/components/Header";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 function Home() {
     const [isHover, setHover] = useState(false);
     const handleMouseEnter = () => {
@@ -11,10 +12,8 @@ function Home() {
     const handleMouseLeave = () => {
         setHover(false);
     };
-    const style = isHover
-        ? "!my-10 scale-110"
-        : "";
-    
+    const style = isHover ? "!my-10 scale-110" : "";
+
     const slides = [
         {
             id: 1,
@@ -43,7 +42,9 @@ function Home() {
                 style={{ backgroundImage: `url(${backgroundImg})` }}
                 className="w-full h-screen bg-cover flex flex-col"
             >
-                <Header></Header>
+                {/* <Header></Header>
+                 */}
+                <Navbar></Navbar>
                 <div className="flex flex-col justify-center h-full">
                     <div className="flex flex-col lg:flex-row lg:justify-center items-center w-full">
                         <div className="flex justify-center lg:basis-1/2 lg:max-w-[50%] animate-bounce">

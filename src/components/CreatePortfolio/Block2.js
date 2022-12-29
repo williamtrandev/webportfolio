@@ -4,7 +4,7 @@ export default function Block2({ color }) {
     return (
         <div
             id="Block2"
-            className="w-full min-h-[300px] grid grid-cols-3 border-dashed border-y border-slate-300"
+            className="changeClass w-full min-h-[300px] grid grid-cols-3 border-dashed border-y border-slate-300"
             spellCheck="false"
         >
             <div className="h-full w-full flex flex-col justify-between">

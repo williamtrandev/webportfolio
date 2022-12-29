@@ -12,6 +12,7 @@ export default function Contact2() {
         <section
             name="contact"
             className=" my-12 pt-[100px] "
+            spellCheck="false"
         >
             <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
                 <div className="flex justify-center pb-8">
@@ -61,8 +62,12 @@ export default function Contact2() {
                             <FaEnvelope className="text-cyan-500"></FaEnvelope>
                             <div className="flex flex-col pl-4">
                                 <h3 className="text-white">Email</h3>
-                                <h4 contentEditable
-                    suppressContentEditableWarning={true}>tsimple@gmail.com</h4>
+                                <h4
+                                    contentEditable
+                                    suppressContentEditableWarning={true}
+                                >
+                                    tsimple@gmail.com
+                                </h4>
                             </div>
                         </div>
 
@@ -70,8 +75,12 @@ export default function Contact2() {
                             <BsPhone className="text-cyan-500"></BsPhone>
                             <div className="flex flex-col pl-4">
                                 <h3 className="text-white">Điện thoại</h3>
-                                <h4 contentEditable
-                    suppressContentEditableWarning={true}>0908989123</h4>
+                                <h4
+                                    contentEditable
+                                    suppressContentEditableWarning={true}
+                                >
+                                    0908989123
+                                </h4>
                             </div>
                         </div>
 
@@ -79,8 +88,12 @@ export default function Contact2() {
                             <GoLocation className="text-cyan-500"></GoLocation>
                             <div className="flex flex-col pl-4">
                                 <h3 className="text-white">Địa chỉ</h3>
-                                <h4 contentEditable
-                    suppressContentEditableWarning={true}>Quận 7 TP.HCM</h4>
+                                <h4
+                                    contentEditable
+                                    suppressContentEditableWarning={true}
+                                >
+                                    Quận 7 TP.HCM
+                                </h4>
                             </div>
                         </div>
                         <p className="text-white inline">Các mạng xã hội</p>

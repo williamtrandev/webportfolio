@@ -74,7 +74,12 @@ function Service2() {
     };
 
     return (
-        <section id="service2" name="service" className="my-12 pt-[100px]  ">
+        <section
+            id="service2"
+            name="service"
+            className="my-12 pt-[100px]  "
+            spellCheck="false"
+        >
             <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
                 <div className="flex justify-center pb-4 ">
                     <h4 className="uppercase inline font-bold pb-2 border-b-2 border-pink-300 text-cyan-500">

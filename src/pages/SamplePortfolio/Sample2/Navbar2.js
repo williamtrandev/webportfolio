@@ -53,6 +53,7 @@ export default function Navbar2() {
     return (
         <section
             className={`flex justify-between items-center w-full h-20 px-4 z-10 top-0 text-white fixed ${color}`}
+            spellCheck="false"
         >
             <h1 className="text-2xl font-dance ml-2">T-Simple</h1>
 
