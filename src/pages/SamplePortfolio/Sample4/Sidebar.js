@@ -33,25 +33,9 @@ export default function Sidebar() {
     const [isOpen, setOpen] = useState(false);
     const openToggler = isOpen?"open":""
     return (
-        // <div className="h-full w-[270px] bg-[#fdf9ff] fixed left-0 top-0 p-8 z-10 flex justify-center items-center border-r-2 border-gray-500">
-        //     <h1 className="font-dance absolute top-10 text-3xl">T-Simple</h1>
-        //     <ul className="flex flex-col justify-center">
-        //         {components.map((item) => (
-        //             <li
-        //                 key={item.id}
-        //                 className="mb-5 py-1 px-4 font-lobs border-b-2 border-gray-500 hover:cursor-pointer hover:text-orange-600"
-        //             >
-        //                 <div className="flex justify-start items-center">
-        //                     <item.icon></item.icon>
-        //                     <span className="ml-3">{item.title}</span>
-        //                 </div>
-        //             </li>
-        //         ))}
-        //     </ul>
-        // </div>
         <div className={`aside ${openToggler}`}>
             <div className="logo">
-                <a className="font-dance">T-Simple</a>
+                <p className="font-dance">T-Simple</p>
             </div>
             <div
                 className={`nav-toggler ${openToggler}`}

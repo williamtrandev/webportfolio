@@ -1,7 +1,6 @@
 import backgroundImg from "../../assets/bg-home.jpg";
 // import backgroundImg from "../../assets/bg-sample3.jpg";
-import btnImg from "../../assets/btn-img.jpg";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 function Home() {
@@ -14,36 +13,12 @@ function Home() {
     };
     const style = isHover ? "!my-10 scale-110" : "";
 
-    const slides = [
-        {
-            id: 1,
-            url: btnImg,
-            title: "Sample1",
-        },
-        {
-            id: 2,
-            url: backgroundImg,
-            title: "Sample2",
-        },
-        {
-            id: 3,
-            url: btnImg,
-            title: "Sample3",
-        },
-        {
-            id: 4,
-            url: backgroundImg,
-            title: "Sample4",
-        },
-    ];
     return (
         <>
             <div
                 style={{ backgroundImage: `url(${backgroundImg})` }}
                 className="w-full h-screen bg-cover flex flex-col"
             >
-                {/* <Header></Header>
-                 */}
                 <Navbar></Navbar>
                 <div className="flex flex-col justify-center h-full">
                     <div className="flex flex-col lg:flex-row lg:justify-center items-center w-full">
@@ -65,9 +40,6 @@ function Home() {
                                     <button
                                         className={`w-fit lg:px-6 lg:py-3 px-4 py-2 my-2 flex items-center bg-black rounded-md cursor-pointer hover:bg-white font-zendots lg:text-3xl text-xl text-white hover:text-black ease-in-out duration-300 ${style}`}
                                     >
-                                        {/* <p className="font-zendots lg:text-3xl text-xl text-white hover:text-black h-full w-full">
-                                        Create your site
-                                    </p> */}
                                         Create your site
                                     </button>
                                 </Link>

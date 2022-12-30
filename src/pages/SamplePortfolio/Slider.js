@@ -1,11 +1,9 @@
 import { useRef, useState, useEffect } from "react";
-import { HiArrowLeft, HiArrowRight, HiColorSwatch } from "react-icons/hi";
-import backgroundImg from "../../assets/home-create5.jpg";
-import btnImg from "../../assets/btn-img.jpg";
+import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import config from "../../config";
-import img1 from "../../assets/sample1.png"
-import img2 from "../../assets/sample2.png"
+import img1 from "../../assets/sample1.png";
+import img2 from "../../assets/sample2.png";
 import img3 from "../../assets/sample3.png";
 const Slider = () => {
     const slides = [
@@ -16,7 +14,7 @@ const Slider = () => {
         },
         {
             id: 2,
-            url:img2,
+            url: img2,
             title: "Sample2",
         },
         {
@@ -56,39 +54,53 @@ const Slider = () => {
         const newIndex = lastSlide ? 0 : currIndex + 1;
         setCurrIndex(newIndex);
     };
+    const height = window.innerHeight * 0.7 + "px";
+    const width = window.innerWidth * 0.7 + "px";
 
     return (
-        <div className="mx-auto overflow-hidden w-[80%] h-[600px] relative">
+        <div className="mx-auto overflow-hidden w-[70%] h-[70%] relative">
             <div
-                className="whitespace-nowrap transition duration-1000"
+                className="whitespace-nowrap transition duration-1000 h-full w-full"
                 style={{ transform: `translate3d(${-currIndex * 100}%, 0, 0)` }}
                 onClick={getBack}
             >
-                {/* {slides.map((slide) => (
-                    
-                        <div
-                            className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
-                            key={slide.id}
-                            style={{ backgroundImage: `url(${slide.url})` }}
-                        ></div>
-                    
-                ))} */}
                 <Link to={config.routes.sample2}>
                     <div
-                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
-                        style={{ backgroundImage: `url(${img1})` }}
+                        className={"inline-block rounded-lg"}
+                        style={{
+                            width: `${width}`,
+                            height: `${height}`,
+                            backgroundImage: `url(${img1})`,
+                            backgroundPosition: "center",
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                        }}
                     ></div>
                 </Link>
                 <Link to={config.routes.sample3}>
                     <div
-                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
-                        style={{ backgroundImage: `url(${img2})` }}
+                        className={`inline-block ${width} ${height} bg-cover bg-center rounded-lg`}
+                        style={{
+                            width: `${width}`,
+                            height: `${height}`,
+                            backgroundImage: `url(${img2})`,
+                            backgroundPosition: "center",
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                        }}
                     ></div>
                 </Link>
                 <Link to={config.routes.sample4}>
                     <div
-                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
-                        style={{ backgroundImage: `url(${img3})` }}
+                        className={`inline-block ${width} ${height} bg-cover bg-center rounded-lg`}
+                        style={{
+                            width: `${width}`,
+                            height: `${height}`,
+                            backgroundImage: `url(${img3})`,
+                            backgroundPosition: "center",
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                        }}
                     ></div>
                 </Link>
             </div>

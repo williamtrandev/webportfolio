@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Rnd } from "react-rnd";
 
 function Image({
@@ -13,7 +13,7 @@ function Image({
 }) {
     const [ava, setAva] = useState(
         src
-            ? src 
+            ? src
             : "https://yesoffice.com.vn/wp-content/themes/zw-theme//assets/images/default.jpg"
     );
     function changeIMG() {

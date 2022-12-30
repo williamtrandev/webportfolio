@@ -1,23 +1,6 @@
 import Sidebar from "./Sidebar";
 import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-import Block1 from "../../components/CreatePortfolio/Block1";
-import * as ReactDOMServer from "react-dom/server";
-import Block2 from "../../components/CreatePortfolio/Block2";
-import Block3 from "../../components/CreatePortfolio/Block3";
-import Block4 from "../../components/CreatePortfolio/Block4";
-import Heading from "../../components/CreatePortfolio/Heading";
-import SubHeading from "../../components/CreatePortfolio/SubHeading";
-import TextBox from "../../components/CreatePortfolio/TextBox";
-import ImageBox from "../../components/CreatePortfolio/ImageBox";
-import Home1 from "../../components/Porfolio1/Home1";
-import Image from "../../components/DragAndDrop/Image";
 import Page from "./Page";
-import About1 from "../../components/Porfolio1/About1";
-import { useContext } from "react";
-import { StoreContext } from "../../components/store";
-import Toolbar from "../../components/DragAndDrop/Toolbar";
-
 function CreatePortfolio() {
     const [page, setPage] = useState([1]);
     const addNewPage = () => {
@@ -47,7 +30,7 @@ function CreatePortfolio() {
             <Sidebar></Sidebar>
             <div id="portfolio" className="relative flex-grow w-full h-screen">
                 <div className="relative overflow-y-scroll h-full">
-                        {/* <Toolbar isEnable={true}></Toolbar> */}
+                    {/* <Toolbar isEnable={true}></Toolbar> */}
 
                     <div className="min-w-full min-h-full flex flex-col items-center justify-center">
                         {page.map((num, index) => (

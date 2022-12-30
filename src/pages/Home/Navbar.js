@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { BiPhone } from "react-icons/bi";
-import { BsPhoneFill } from "react-icons/bs";
 const Navbar = () => {
     const [openModal, setOpenModal] = useState(false);
     const handleOpen = () => setOpenModal(true);

@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import config from "../../config";
 import Slider from "./Slider";
-import bgSample from "../../assets/bg-sample3.jpg"
+import bgSample from "../../assets/bg-sample3.jpg";
 function SamplePortfolio() {
     return (
         <div
@@ -13,7 +11,9 @@ function SamplePortfolio() {
                 backgroundRepeat: "no-repeat",
             }}
         >
-            <p className="mb-[20px] font-merienda text-[30px]">Choose one sample to edit</p>
+            <p className="mb-[20px] font-merienda text-[30px]">
+                Choose one sample to edit
+            </p>
             <Slider />
         </div>
     );

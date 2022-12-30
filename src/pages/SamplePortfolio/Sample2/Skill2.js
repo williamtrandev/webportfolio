@@ -1,9 +1,7 @@
 import Skills from "../../../components/Sample2/Skills";
-import { FaSmile, FaRegClock,FaHeadphones, FaAward } from "react-icons/fa";
 import { useState } from "react";
 import Plusbin from "../../../components/Plusbin/Plusbin";
 function Skill2() {
-
     const skill = [
         {
             id: 1,
@@ -46,31 +44,35 @@ function Skill2() {
     const [kn2, setkn2] = useState(skill);
 
     const ADDElement1 = () => {
-        let idMax = Math.max.apply(Math, kn2.map(function(o) { return o.id; }))
+        let idMax = Math.max.apply(
+            Math,
+            kn2.map(function (o) {
+                return o.id;
+            })
+        );
         // console.log(idMax);
         const newGT = {
-            id: 1+idMax,
+            id: 1 + idMax,
             phantram: 0,
             ngonngu: "...",
-            mota: 'detail'
-        }
-        setkn2([...kn2, newGT ])
+            mota: "detail",
+        };
+        setkn2([...kn2, newGT]);
         // console.log(gioithieuCV);
-      };
+    };
 
-      const DELETEElement1 = (e) => {
-        let indexRemove= e.target.parentElement.parentElement.getAttribute("data-key");
+    const DELETEElement1 = (e) => {
+        let indexRemove =
+            e.target.parentElement.parentElement.getAttribute("data-key");
         // console.log(indexRemove);
-        if(indexRemove == 1 ){
+        if (indexRemove == 1) {
             return;
         }
-        var newGT = kn2.filter(function(element){
+        var newGT = kn2.filter(function (element) {
             return element.id != indexRemove;
         });
         setkn2(newGT);
-        
-      };
-
+    };
 
     return (
         <section
