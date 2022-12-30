@@ -1,7 +1,7 @@
 import React from 'react';
 import { Rnd } from 'react-rnd';
 
-function ThanhKE({width=1000, height=10, x = 50, y = 50, classname=""}) {
+function ThanhKE({width=700, height=10, x = 50, y = 50, classname=""}) {
     return (
         <Rnd
             default={{

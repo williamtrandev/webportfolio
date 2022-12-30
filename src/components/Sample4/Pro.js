@@ -26,24 +26,24 @@ function Pro({ MenuItem, className = "" , colorChange}) {
                 />
                 <img src={ava} alt="project-img" className="h-[200px]" />
             </div>
-            <h2
+            <h2 contentEditable suppressContentEditableWarning={true}
                 className={`text-base ${colorChange}   font-bold text-center px-1`}
             >
                 {MenuItem.name}
             </h2>
-            <h2 className={`text-base ${colorChange}   text-center px-1`}>
+            <h2 contentEditable suppressContentEditableWarning={true} className={`text-base ${colorChange}   text-center px-1`}>
                 {MenuItem.Category}
             </h2>
-            <h2 className={`text-base ${colorChange}   text-center px-1`}>
+            <h2 contentEditable suppressContentEditableWarning={true} className={`text-base ${colorChange}   text-center px-1`}>
                 {MenuItem.Client}
             </h2>
-            <h2 className={`text-base ${colorChange}   text-center px-1`}>
+            <h2 contentEditable suppressContentEditableWarning={true} className={`text-base ${colorChange}   text-center px-1`}>
                 {MenuItem.date}
             </h2>
-            <h2 className={`text-base ${colorChange}   text-center px-1`}>
+            <h2 contentEditable suppressContentEditableWarning={true} className={`text-base ${colorChange}   text-center px-1`}>
                 {MenuItem.url}
             </h2>
-            <h2 className={`text-base ${colorChange}   text-center px-1`}>
+            <h2 contentEditable suppressContentEditableWarning={true} className={`text-base ${colorChange}   text-center px-1`}>
                 {MenuItem.congdung}
             </h2>
         </div>

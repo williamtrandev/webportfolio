@@ -75,20 +75,20 @@ const Slider = () => {
                 ))} */}
                 <Link to={config.routes.sample2}>
                     <div
-                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
-                        style={{ backgroundImage: `url(${img1})` }}
+                        className="inline-block w-full h-[500px] bg-cover bg-center rounded-lg"
+                        style={{ backgroundImage: `url(${img1})`, backgroundPosition: "center",   backgroundSize: "cover",   backgroundRepeat: "no-repeat", }}
                     ></div>
                 </Link>
                 <Link to={config.routes.sample3}>
                     <div
-                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
-                        style={{ backgroundImage: `url(${img2})` }}
+                        className="inline-block w-full h-[500px] bg-cover bg-center rounded-lg"
+                        style={{ backgroundImage: `url(${img2})`, backgroundPosition: "center",   backgroundSize: "cover",   backgroundRepeat: "no-repeat", }}
                     ></div>
                 </Link>
                 <Link to={config.routes.sample4}>
                     <div
-                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
-                        style={{ backgroundImage: `url(${img3})` }}
+                        className="inline-block w-full h-[500px] bg-cover bg-center rounded-lg"
+                        style={{ backgroundImage: `url(${img3})`, backgroundPosition: "center",   backgroundSize: "cover",   backgroundRepeat: "no-repeat", }}
                     ></div>
                 </Link>
             </div>

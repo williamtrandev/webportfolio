@@ -4,30 +4,30 @@ export default function Block4({ color }) {
     return (
         <div
             id="Block4"
-            className="changeClass w-full min-h-[200px] grid grid-cols-2 border-dashed border-y border-slate-300"
+            className="changeClass w-full min-h-[300px] h-[50%]  grid grid-cols-2 border-dashed border-y border-slate-300"
             spellCheck="false"
         >
             <div
                 className={
-                    (color ? color : "bg-white") +
+                    (color ? color : "") +
                     " w-full px-[50px] py-[20px] flex justify-between items-center"
                 }
             >
                 <ImageBox
-                    maxHeight={"max-h-[200px]"}
+                    maxHeight={"max-h-[300px]"}
                     basisWidth={"basis-[40%]"}
                 ></ImageBox>
                 <div className="ml-[20px] flex justify-center items-center flex-grow-0 flex-shrink-0 basis-[60%] max-w-[60%]">
                     <Text
                         padd={"p-[20px]"}
                         textAlign={"text-left"}
-                        bgColor={"bg-slate-50"}
+                        bgColor={""}
                     ></Text>
                 </div>
             </div>
             <div
                 className={
-                    (color ? color : "bg-white") +
+                    (color ? color : "") +
                     " w-full px-[50px] py-[20px] flex justify-between"
                 }
             >
@@ -39,7 +39,7 @@ export default function Block4({ color }) {
                     <Text
                         padd={"p-[20px]"}
                         textAlign={"text-left"}
-                        bgColor={"bg-slate-50"}
+                        bgColor={""}
                     ></Text>
                 </div>
             </div>

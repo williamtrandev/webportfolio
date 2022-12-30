@@ -20,6 +20,7 @@ import Toolbar from "../../components/DragAndDrop/Toolbar";
 
 function CreatePortfolio() {
     const [page, setPage] = useState([1]);
+    const [back, setback] = useState(localStorage.getItem("backgroungColor"))
     const addNewPage = () => {
         setPage([...page, page[page.length] + 1]);
     };
@@ -51,7 +52,7 @@ function CreatePortfolio() {
 
                     <div className="min-w-full min-h-full flex flex-col items-center justify-center">
                         {page.map((num, index) => (
-                            <Page key={num} index={index}></Page>
+                            <Page key={num} index={index} classname={back}></Page>
                         ))}
 
                         <div className="removeAdd w-[90%] max-w-[90%] my-[40px] rounded-[5px] flex justify-center items-center bg-slate-300 hover:bg-slate-400">

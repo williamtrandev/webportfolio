@@ -14,20 +14,12 @@ import Icon from "../../components/DragAndDrop/Icon";
 import ThanhKE from "../../components/DragAndDrop/ThanhKe";
 import About1 from "../../components/Porfolio1/About1";
 import Contact1 from "../../components/Porfolio1/Contact1";
-
 // <Heading />, <SubHeading />, <TextBox />, <ImageBox />
-const arr = {
-    Sample: [<Home1 />, <About1 />, <Contact1 />],
-    Components: [<Block1 />, <Block2 />, <Block3 />, <Block4 />],
-    Text: [
-        <Box />,
-        <Box height={65} classname="text-6xl font-bold" />,
-        <ThanhKE />,
-        <Image />,
-    ],
-};
+
+
+
 // export const DataContext = createContext()
-export default function Page({ num, index }) {
+export default function Page({ num, index, classname="bg-white"}) {
     const [ele, setEle] = useState([]);
     const handleDrop = (event) => {
         event.preventDefault();
@@ -40,10 +32,21 @@ export default function Page({ num, index }) {
         console.log(arr[name][id - 1].className);
         setEle([...ele, arr[name][id - 1]]);
     };
+    const [back, setback] = useState(localStorage.getItem("backgroungColor"))
+    const arr = {
+        Sample: [<Home1 classname={back}/>, <About1 classname={back}/>, <Contact1 />],
+        Components: [<Block1 />, <Block2 />, <Block3 />, <Block4 />],
+        Text: [
+            <Box />,
+            <Box height={65} classname="text-6xl font-bold" />,
+            <ThanhKE />,
+            <Image />,
+        ],
+    };
     return (
         <div
             id={num}
-            className={`Page mt-[8px] w-[90%] max-w-[90%] h-[600px] border border-black bg-white ${num}`}
+            className={`Page mt-[8px] w-[90%] max-w-[90%] h-[600px] border border-black ${classname}  ${num}`}
             onDragOver={(event) => event.preventDefault()}
             onDrop={(event) => handleDrop(event)}
         >
