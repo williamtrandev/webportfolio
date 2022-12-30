@@ -66,15 +66,15 @@ function Background() {
     
     return ( 
 
-        <div className="p-8  bg-gray-900 text-center">
+        <div className="p-2  bg-gray-900 text-center">
             <h1 className="font-bold ">&#9995; <span className="font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Choose Your Background Portfolio</span> &#9757;</h1>
 
-                    <div className=" p-8 flex flex-row flex-wrap">
+                    <div className=" gap-4  grid grid-cols-1 lg:grid-cols-3">
 
             {background.map((item, index) => (
                         
                         
-                        <div key={index} className={`w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-4 pt-4`}>
+                        <div key={index} className={`w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-2 pt-4`}>
     
     <div className="flex flex-col items-center pb-10">
         <div className={`w-[335px] h-[152px] mb-3 rounded-full shadow-lg ${item.background}`}></div>
