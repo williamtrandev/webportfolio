@@ -1,7 +1,7 @@
 {
     "name": "web-portfolio",
     "version": "0.1.0",
-    "private": false,
+    "private": true,
     "homepage": "https://WilliamTran2k3.github.io/webportfolio",
     "dependencies": {
         "@emotion/react": "^11.10.5",
@@ -39,7 +39,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "CI= npm run build",
+        "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
