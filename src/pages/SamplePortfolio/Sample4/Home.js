@@ -1,8 +1,13 @@
 import avatar from "../../../assets/avatar-sample4.jpg";
 import { useState, useEffect } from "react";
-export default function Home() {
-    const [ava, setAva] = useState(avatar);
+import { Link } from "react-scroll";
 
+export default function Home() {
+    const [ava, setAva] = useState(
+        localStorage.getItem("avaHomeSP4")
+            ? localStorage.getItem("avaHomeSP4")
+            : avatar
+    );
     // Xoa anh trong bo nho moi lan doi anh
     useEffect(() => {
         return () => {
@@ -13,6 +18,7 @@ export default function Home() {
         const file = e.target.files[0];
         file.preview = URL.createObjectURL(file);
         setAva(file.preview);
+        localStorage.setItem("avaHomeSP4", file.preview);
     };
     return (
         <section id="home" className="home section" spellCheck="false">
@@ -55,14 +61,16 @@ export default function Home() {
                             We have 4-week experience. Our experience is to
                             design and code software
                         </p>
-                        <button className="btn">
-                            <p
-                                contentEditable
-                                suppressContentEditableWarning={true}
-                            >
-                                Hire us
-                            </p>
-                        </button>
+                        <Link to="contact" smooth duration={"1000ms"}>
+                            <button className="btn">
+                                <p
+                                    contentEditable
+                                    suppressContentEditableWarning={true}
+                                >
+                                    Hire us
+                                </p>
+                            </button>
+                        </Link>
                     </div>
                     <div className="home-img padd-15 relative">
                         <div className="wrapper relative w-[250px] z-10">
@@ -71,7 +79,11 @@ export default function Home() {
                                 type={"file"}
                                 onChange={handleAva}
                             />
-                            <img className="object-cover" src={ava} alt="avatar" />
+                            <img
+                                className="object-cover"
+                                src={ava}
+                                alt="avatar"
+                            />
                         </div>
                     </div>
                 </div>

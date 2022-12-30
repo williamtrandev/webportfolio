@@ -68,7 +68,8 @@ function Sample4() {
         }
     }
     const handleClick = () => {
-        const webBody = document.getElementById("SP4");
+        const webBody = document.getElementById("SP4").cloneNode(true);
+        webBody.getElementsByClassName("style-switcher")[0].classList.add("hidden");
         var css = [];
 
         for (var sheeti = 0; sheeti < document.styleSheets.length; sheeti++) {
@@ -88,7 +89,6 @@ function Sample4() {
             }
         }
         css = css.join("\n");
-        // console.log(css.join("\n"));
         const data = `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -119,7 +119,7 @@ function Sample4() {
         }
     };
     return (
-        <div id="SP4" className={`w-full h-screen ${bgBody}`}>
+        <div id="SP4" className={`w-full h-screen ${bgBody}`} spellCheck="false">
             <Sidebar></Sidebar>
             <div className="xl:pl-[270px]">
                 <Home></Home>

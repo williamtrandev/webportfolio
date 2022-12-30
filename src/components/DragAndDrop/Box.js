@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Rnd } from "react-rnd";
 import Remove from "./Remove";
 import Toolbar from "./Toolbar";
+import Plusbin from "../Plusbin/Plusbin";
+
 
 const style1 = {
     display: "flex",
@@ -25,8 +27,22 @@ export default function Box({
     x = 50,
     y = 50,
     classname = "",
+    datakey = localStorage.getItem("id_element"),
 }) {
+    var id=  localStorage.getItem("id_element") - 1;
+    localStorage.setItem("id_element", id+3)
     const [enable, setEnable] = useState(false);
+
+    function handledelete(e){
+        // const list = e.target.parentElement.parentElement.parentElement.parentElement.parentElement;
+        // const child = e.target.parentElement.parentElement.parentElement.parentElement;
+        // console.log(child);
+        // child.style.display = "none";
+        const id = e.target.parentElement.parentElement.getAttribute("data-key");
+        const data = document.getElementById(id);
+        data.remove();
+       
+    }
     return (
         <Rnd
             default={{
@@ -39,11 +55,12 @@ export default function Box({
             minWidth={10}
             minHeight={20}
             grid={[50, 50]}
-            bounds={parent}
+            bounds={parent.parent}
+            id= {datakey}
         >
             {enable && <Toolbar isEnable={true} />}
-            <div
-                className={`canEdit group w-full h-full border relative ${classname}`}
+            <div data-key= {datakey}
+                className={`congviec group w-full h-full border relative ${classname}`}
                 contentEditable
                 suppressContentEditableWarning={true}
                 spellCheck={false}
@@ -52,7 +69,8 @@ export default function Box({
                 }}
             >
                 {item}
-                <Remove></Remove>
+                {/* <Remove></Remove> */}
+                <Plusbin keyIndex= {datakey} hiddenPlus = "hidden" classname="dieukhien top-0 opacity-0 -left-7" onClickfuncDELETE={handledelete}/>
             </div>
         </Rnd>
     );

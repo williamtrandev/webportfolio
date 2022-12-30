@@ -8,7 +8,7 @@ import React from "react";
 import { AiFillSetting } from "react-icons/ai";
 import "./Sample3.css";
 import { useState } from "react";
-
+import { BsDownload } from "react-icons/bs";
 export default function Home3() {
     const [Home, setHome] = useState(true);
     const [About, setAbout] = useState(false);
@@ -103,6 +103,93 @@ export default function Home3() {
             }
         }
     }
+
+    const handleClick = () => {
+        const webBody = document.getElementById("Sample2").cloneNode(true);
+        var js = [];
+        var scripts = document.getElementsByTagName("script");
+
+        for (var i = 0; i < scripts.length; i++) {
+            js.push("<script>" + scripts[i].src + "</script>");
+        }
+        js = js.join("\n");
+        console.log(js);
+        var css = [];
+
+        for (var sheeti = 0; sheeti < document.styleSheets.length; sheeti++) {
+            var sheet = document.styleSheets[sheeti];
+            var rules = "cssRules" in sheet ? sheet.cssRules : sheet.rules;
+            for (var rulei = 0; rulei < rules.length; rulei++) {
+                var rule = rules[rulei];
+                if ("cssText" in rule)
+                    css.push(`<style>` + rule.cssText + `</style>`);
+                else
+                    css.push(
+                        rule.selectorText +
+                            " {\n" +
+                            rule.style.cssText +
+                            "\n}\n"
+                    );
+            }
+        }
+        css = css.join("\n");
+        // var css = [];
+        // for (var i = 0; i < document.styleSheets.length; i++) {
+        //     var sheet = document.styleSheets[i];
+        //     var rules = "cssRules" in sheet ? sheet.cssRules : sheet.rules;
+        //     if (rules) {
+        //         css.push(
+        //             "\n/* Stylesheet : " +
+        //                 (sheet.href || "[inline styles]") +
+        //                 " */"
+        //         );
+        //         for (var j = 0; j < rules.length; j++) {
+        //             var rule = rules[j];
+        //             if ("cssText" in rule) css.push(rule.cssText);
+        //             else
+        //                 css.push(
+        //                     rule.selectorText +
+        //                         " {\n" +
+        //                         rule.style.cssText +
+        //                         "\n}\n"
+        //                 );
+        //         }
+        //     }
+        // }
+        // var cssInline = css.join("\n") + "\n";
+        const data = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Web Portfolio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        </head>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster+Two&family=Merienda&family=Pacifico&family=Playfair+Display&family=Zen+Dots&display=swap');
+        ${css}
+        </style>
+
+        <body>
+            ${webBody.outerHTML}
+            ${js}
+        </body>
+        </html>`;
+        const filename = "webportfolio.html";
+        const blob = new Blob([data], { type: "text/plain" });
+        if (window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, filename);
+        } else {
+            const elem = window.document.createElement("a");
+            elem.href = window.URL.createObjectURL(blob);
+            elem.download = filename;
+            document.body.appendChild(elem);
+            elem.click();
+            document.body.removeChild(elem);
+        }
+    };
 
     return (
         <div className="relative">
@@ -458,6 +545,11 @@ export default function Home3() {
                             </div>
                         </div>
                     </div>
+
+                    <span>Download</span>
+                    <button className="ml-8" onClick={handleClick}>
+                        <BsDownload className="iconDownload"></BsDownload>
+                    </button>
                 </div>
             </div>
         </div>

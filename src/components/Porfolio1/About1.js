@@ -5,9 +5,12 @@ import Image from "../DragAndDrop/Image";
 function About1( {classname = "bg-red-400"}) {
     const height = window.innerHeight-50 ;
     const width = (window.innerWidth - 348) * 0.9;
+    console.log(localStorage.getItem("id_element"));
+
     return (
         <div className={`changeClass w-full h-[600px] relative  text-red-500 ${classname}`}>
             <Box
+            
                 item={"By TSIMPLE"}
                 width={210}
                 height={40}
@@ -23,7 +26,7 @@ function About1( {classname = "bg-red-400"}) {
                 y={height * 0.034}
                 classname={"font-bold text-3xl"}
             />
-            <ThanhKE y={width * 0.1} x={height * 0.085} width={825} />
+            <ThanhKE y={width * 0.1} x={height * 0.085} width={825}  />
             <Image
                 x={width * 0.67}
                 y={height * 0.21}

@@ -11,9 +11,8 @@ export default function Portfolio2() {
             linkWeb: "https://example.com",
             theloai: "web/app",
             mota: "web dùng để làm gì, công dụng",
-            date:"1/1/2002",
-            client:"Tran Thanh",
-            
+            date: "1/1/2002",
+            client: "Tran Thanh",
         },
         {
             id: 2,
@@ -22,8 +21,8 @@ export default function Portfolio2() {
             linkWeb: "https://example.com",
             theloai: "web/app",
             mota: "web dùng để làm gì, công dụng",
-            date:"1/1/2002",
-            client:"Tran Thanh",
+            date: "1/1/2002",
+            client: "Tran Thanh",
         },
         {
             id: 33,
@@ -32,8 +31,8 @@ export default function Portfolio2() {
             linkWeb: "https://example.com",
             theloai: "web/app",
             mota: "web dùng để làm gì, công dụng",
-            date:"1/1/2002",
-            client:"Tran Thanh",
+            date: "1/1/2002",
+            client: "Tran Thanh",
         },
         {
             id: 321,
@@ -42,56 +41,67 @@ export default function Portfolio2() {
             linkWeb: "https://example.com",
             theloai: "web/app",
             mota: "web dùng để làm gì, công dụng",
-            date:"1/1/2002",
-            client:"Tran Thanh",
+            date: "1/1/2002",
+            client: "Tran Thanh",
         },
-         {
+        {
             id: 21,
             src: "https://i.pinimg.com/736x/aa/97/1c/aa971cbceaa9f9cf6394b61cbd7fc5f1.jpg",
             tenWeb: "Web",
             linkWeb: "https://example.com",
             theloai: "web/app",
             mota: "web dùng để làm gì, công dụng",
-            date:"1/1/2002",
-            client:"Tran Thanh",
-            
+            date: "1/1/2002",
+            client: "Tran Thanh",
         },
-        
-        
-    ];
-
-    const [pro, setpro] = useState(portfolios)
-
-
-    const ADDElement1 = () => {
-        let idMax = Math.max.apply(Math, pro.map(function(o) { return o.id; }))
-        // console.log(idMax);
-        const newGT = {
-            id: idMax+ 1,
+        {
+            id: 99,
             src: "https://i.pinimg.com/736x/aa/97/1c/aa971cbceaa9f9cf6394b61cbd7fc5f1.jpg",
             tenWeb: "Web",
             linkWeb: "https://example.com",
             theloai: "web/app",
             mota: "web dùng để làm gì, công dụng",
-            date:"1/1/2002",
-            client:"Tran Thanh",
-        }
-        setpro([...pro, newGT ])
-        // console.log(gioithieuCV);
-      };
+            date: "1/1/2002",
+            client: "Tran Thanh",
+        },
+    ];
 
-      const DELETEElement1 = (e) => {
-        let indexRemove= e.target.parentElement.parentElement.getAttribute("data-key");
+    const [pro, setpro] = useState(portfolios);
+
+    const ADDElement1 = () => {
+        let idMax = Math.max.apply(
+            Math,
+            pro.map(function (o) {
+                return o.id;
+            })
+        );
+        // console.log(idMax);
+        const newGT = {
+            id: idMax + 1,
+            src: "https://i.pinimg.com/736x/aa/97/1c/aa971cbceaa9f9cf6394b61cbd7fc5f1.jpg",
+            tenWeb: "Web",
+            linkWeb: "https://example.com",
+            theloai: "web/app",
+            mota: "web dùng để làm gì, công dụng",
+            date: "1/1/2002",
+            client: "Tran Thanh",
+        };
+        setpro([...pro, newGT]);
+        // console.log(gioithieuCV);
+    };
+
+    const DELETEElement1 = (e) => {
+        let indexRemove =
+            e.target.parentElement.parentElement.getAttribute("data-key");
         // console.log(indexRemove);
-        if(indexRemove == 1){
+        if (indexRemove == 1) {
             return;
         }
-        var newGT = pro.filter(function(element){
+        var newGT = pro.filter(function (element) {
             return element.id != indexRemove;
         });
         setpro(newGT);
-        
-      };
+    };
 
     return (
         <section

@@ -6,9 +6,10 @@ export default function Remove() {
 		// console.log(root);
 		// console.log(e.target.parentElement.parentElement.parentElement);
 		// root.removeChild(e.target.parentElement.parentElement.parentElement);
-		e.target.parentElement.parentElement.parentElement.classList.add(
-            "hidden"
-        );
+        console.log(e.target.parentElement.parentElement.parentElement.parentElement);
+		// e.target.parentElement.parentElement.parentElement.classList.add(
+        //     "hidden"
+        // );
     };
     return (
         <div

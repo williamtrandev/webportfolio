@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { renderToString } from "react-dom/server";
 import { SiElement } from "react-icons/si";
 import { CgComponents } from "react-icons/cg";
-import { AiOutlineAppstore, AiOutlineCloseCircle } from "react-icons/ai";
-import { BsSquareHalf } from "react-icons/bs";
+import { AiOutlineAppstore } from "react-icons/ai";
+import { GiBlackBook } from "react-icons/gi";
 import imgBlock1 from "../../assets/block1.png";
 import imgBlock2 from "../../assets/block2.png";
 import imgBlock3 from "../../assets/block3.png";
@@ -14,8 +14,7 @@ import contact1 from "../../assets/contact1.png";
 import { HiHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import config from "../../config";
-import { type } from "@testing-library/user-event/dist/type";
-import Contact1 from "../../components/Porfolio1/Contact1";
+import { BiDownload } from "react-icons/bi";
 export default function Sidebar() {
     const sampleItems = [
         {
@@ -196,7 +195,14 @@ export default function Sidebar() {
         });
         const draggableItems =
             webBody.getElementsByClassName("react-draggable");
-        [...draggableItems].forEach((item) => item.removeChild(item.lastChild));
+        [...draggableItems].forEach((item) => {
+            item.classList.add("!cursor-default");
+            item.removeChild(item.lastChild);
+            [...item.children].forEach((item2) => {
+                item2.classList.add("!border-none");
+                item2.removeAttribute("contenteditable");
+            });
+        });
         const hiddenAdd = webBody.getElementsByClassName("removeAdd")[0];
         hiddenAdd.classList.add("hidden");
         [...pages].forEach((pageItem) => {
@@ -217,13 +223,7 @@ export default function Sidebar() {
                 "justify-center"
             );
 
-            // [...div.children].forEach((item) => {
-            //     item.classList.contains("hasBg") &&
-            //         item.classList.add("!bg-none") &&
-            //         console.log(div.style.background);
-            //     console.log(item.classList.contains("hasBg"));
-            //     console.log(div.style.background);
-            // });
+            [...div.children].forEach((item) => item.classList.add("!bg-none"));
             pageItem.appendChild(div);
         });
         const data = `<!DOCTYPE html>
@@ -234,6 +234,18 @@ export default function Sidebar() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Web Portfolio</title>
             <script src="https://cdn.tailwindcss.com"></script>
+            <style>
+                * {
+                    padding: 0;
+                    margin: 0;
+                    box-sizing: border-box;
+                }
+
+                body {
+                    font-size: 1.6rem;
+                    text-rendering: optimizeSpeed;
+                }
+            </style>
         </head>
         <body>
             ${webBody.outerHTML}
@@ -280,8 +292,8 @@ export default function Sidebar() {
                 <ul className="absolute bg-cyan-800">
                     <Link to={config.routes.home}>
                         <div className="flex flex-col justify-center items-center bg-cyan-900 h-[98px] cursor-pointer hover:bg-cyan-800 group">
-                            <button className="mt-[5px] flex justify-center w-[30px] h-[30px] rounded-[50%] bg-white">
-                                <HiHome className="group-hover:text-black"></HiHome>
+                            <button className="mt-[5px] flex justify-center items-center w-[30px] h-[30px] rounded-[50%] bg-white">
+                                <HiHome className="group-hover:text-black text-[24px]"></HiHome>
                             </button>
                             <span className="text-[15px] group-hover:text-white">
                                 Home
@@ -290,8 +302,8 @@ export default function Sidebar() {
                     </Link>
                     <Link to={config.routes.SamplePortfolio}>
                         <div className="flex flex-col justify-center items-center bg-cyan-900 h-[98px] cursor-pointer hover:bg-cyan-800 group">
-                            <button className="mt-[5px] flex justify-center w-[30px] h-[30px] rounded-[50%] bg-white">
-                                <HiHome className="group-hover:text-black"></HiHome>
+                            <button className="mt-[5px] flex justify-center items-center w-[30px] h-[30px] rounded-[50%] bg-white">
+                                <GiBlackBook className="group-hover:text-black text-[24px]"></GiBlackBook>
                             </button>
                             <span className="text-[15px] group-hover:text-white">
                                 Back Sample
@@ -310,10 +322,12 @@ export default function Sidebar() {
                         </li>
                     ))}
                     <div
-                        className="h-[98px] w-[98px] flex flex-col justify-center items-center bg-cyan-900 cursor-pointer hover:text-white bg-cyan-900"
+                        className="group h-[98px] w-[98px] flex flex-col justify-center items-center bg-cyan-900 cursor-pointer hover:text-white bg-cyan-900"
                         onClick={handleDownload}
                     >
-                        <button className="mt-[5px] w-[30px] h-[30px] rounded-[50%] bg-white"></button>
+                        <button className="mt-[5px] w-[30px] h-[30px] rounded-[50%] bg-white flex justify-center items-center">
+                            <BiDownload className="group-hover:text-black text-[24px]"></BiDownload>
+                        </button>
                         <span className="text-[15px]">Download</span>
                     </div>
                 </ul>

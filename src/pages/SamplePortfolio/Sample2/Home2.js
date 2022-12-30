@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 
 export default function Home2() {
     const [ava, setAva] = useState(
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFMlLUP8BsN9CK3yP_mbKAJCMVX52SLCbmoNeu9_ai1Bu8UoPO7ffpTDZZ8mFiF-SleIM&usqp=CAU"
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT66JMH15FJkrsx2JCngUBRsxubwH6yXYTIJg&usqp=CAU"
     );
 
     // Xoa anh trong bo nho moi lan doi anh
@@ -61,7 +61,7 @@ export default function Home2() {
                     />
                     <img
                         src={ava}
-                        className="rounded-2xl mx-auto w-2/3 md:w-full object-contain"
+                        className="rounded-2xl mx-auto w-[250px] md:w-full "
                     />
                 </div>
             </div>

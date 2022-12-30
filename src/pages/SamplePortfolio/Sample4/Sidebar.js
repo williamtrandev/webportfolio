@@ -31,11 +31,15 @@ export default function Sidebar() {
         },
     ];
     const [isOpen, setOpen] = useState(false);
-    const openToggler = isOpen?"open":""
+    const openToggler = isOpen ? "open" : "";
     return (
         <div className={`aside ${openToggler}`}>
-            <div className="logo">
-                <p className="font-dance">T-Simple</p>
+            <div
+                className="logo"
+                contentEditable="true"
+                suppressContentEditableWarning="false"
+            >
+                <a className="font-dance">T-Simple</a>
             </div>
             <div
                 className={`nav-toggler ${openToggler}`}
