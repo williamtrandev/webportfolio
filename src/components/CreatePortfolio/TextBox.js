@@ -2,7 +2,7 @@ export default function TextBox({padd, textAlign, bgColor, maxWidth, margin}) {
 	return (
         <div
             id="TextBox"
-            className={`text-center w-full flex justify-center items-center ${margin}`}
+            className={`text-center editableBox relative w-full flex justify-center items-center ${margin}`}
             spellCheck="false"
         >
             <p

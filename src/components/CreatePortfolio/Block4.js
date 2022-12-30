@@ -4,7 +4,7 @@ export default function Block4({ color }) {
     return (
         <div
             id="Block4"
-            className="changeClass w-full min-h-[300px] h-[50%]  grid grid-cols-2 border-dashed border-y border-slate-300"
+            className="changeClass relative w-full max-h-[300px] h-[300px]  grid grid-cols-2 border-dashed border-y border-slate-300"
             spellCheck="false"
         >
             <div
@@ -28,7 +28,7 @@ export default function Block4({ color }) {
             <div
                 className={
                     (color ? color : "") +
-                    " w-full px-[50px] py-[20px] flex justify-between"
+                    " w-full px-[50px] py-[20px] flex justify-between items-center"
                 }
             >
                 <ImageBox

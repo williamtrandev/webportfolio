@@ -203,6 +203,9 @@ export default function Sidebar() {
                 item2.removeAttribute("contenteditable");
             });
         });
+        [...webBody.getElementsByClassName("editableBox")].forEach((item) => {
+            item.firstChild.removeAttribute("contenteditable");
+        });
         const hiddenAdd = webBody.getElementsByClassName("removeAdd")[0];
         hiddenAdd.classList.add("hidden");
         [...pages].forEach((pageItem) => {
@@ -220,7 +223,8 @@ export default function Sidebar() {
                 "!mt-0",
                 "!border-none",
                 "flex",
-                "justify-center"
+                "justify-center",
+                "items-center"
             );
 
             [...div.children].forEach((item) => item.classList.add("!bg-none"));
