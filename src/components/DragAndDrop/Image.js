@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Rnd } from "react-rnd";
 import Plusbin from "../Plusbin/Plusbin";
 
-
 function Image({
     parent = "parent",
     width = 160,
@@ -14,20 +13,39 @@ function Image({
     datakey = localStorage.getItem("id_element"),
     src,
 }) {
+    function previewFile(e) {
+        // const preview = document.querySelector("img");
+        // const file = document.querySelector("input[type=file]").files[0];
+        const file = e.target.files[0];
+
+        const reader = new FileReader();
+
+        reader.addEventListener(
+            "load",
+            () => {
+                // convert image file to base64 string
+                setAva(reader.result);
+                localStorage.setItem("avaHomeSP4", reader.result);
+            },
+            false
+        );
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
     const [ava, setAva] = useState(
         src
             ? src
             : "https://yesoffice.com.vn/wp-content/themes/zw-theme//assets/images/default.jpg"
     );
-    var id=  localStorage.getItem("id_element") - 1;
-    localStorage.setItem("id_element", id+3)
+    var id = localStorage.getItem("id_element") - 1;
+    localStorage.setItem("id_element", id + 3);
     function changeIMG() {
         let input = document.createElement("input");
         input.type = "file";
         input.onchange = (e) => {
-            const file = e.target.files[0];
-            file.preview = URL.createObjectURL(file);
-            setAva(file.preview);
+            previewFile(e);
         };
         input.accept = "image/*";
         input.click();
@@ -42,15 +60,15 @@ function Image({
         borderradius: "10px",
     };
 
-    function handledelete(e){
+    function handledelete(e) {
         // const list = e.target.parentElement.parentElement.parentElement.parentElement.parentElement;
         // const child = e.target.parentElement.parentElement.parentElement.parentElement;
         // console.log(child);
         // child.style.display = "none";
-        const id = e.target.parentElement.parentElement.getAttribute("data-key");
+        const id =
+            e.target.parentElement.parentElement.getAttribute("data-key");
         const data = document.getElementById(id);
         data.remove();
-       
     }
 
     return (
@@ -65,10 +83,12 @@ function Image({
             minWidth={10}
             minHeight={10}
             bounds={parent.parent}
-            id= {datakey}
-
+            id={datakey}
         >
-            <div keyIndex= {datakey} className="group  congviec relative w-full h-full ">
+            <div
+                keyIndex={datakey}
+                className="group  congviec relative w-full h-full "
+            >
                 <label
                     onDoubleClick={changeIMG}
                     htmlFor="img"
@@ -81,10 +101,13 @@ function Image({
                         (ava ? "" : "hidden ") + "h-full   w-full object-cover "
                     }
                 />
-                <Plusbin keyIndex= {datakey} hiddenPlus = "hidden" classname="dieukhien top-0 opacity-0 -left-7" onClickfuncDELETE={handledelete}/>
+                <Plusbin
+                    keyIndex={datakey}
+                    hiddenPlus="hidden"
+                    classname="dieukhien top-0 opacity-0 -left-7"
+                    onClickfuncDELETE={handledelete}
+                />
             </div>
-        
-
         </Rnd>
     );
 }

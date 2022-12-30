@@ -7,6 +7,26 @@ export default function ImageBox({
     maxHeight,
     maxWidth,
 }) {
+    function previewFile(e) {
+        // const preview = document.querySelector("img");
+        // const file = document.querySelector("input[type=file]").files[0];
+        const file = e.target.files[0];
+
+        const reader = new FileReader();
+
+        reader.addEventListener(
+            "load",
+            () => {
+                // convert image file to base64 string
+                setAva(reader.result);
+            },
+            false
+        );
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
     const [ava, setAva] = useState();
     // Xoa anh trong bo nho moi lan doi anh
     useEffect(() => {
@@ -14,12 +34,12 @@ export default function ImageBox({
             ava && URL.revokeObjectURL(ava);
         };
     }, [ava]);
-    const handleAva = (e) => {
-        const file = e.target.files[0];
-        console.log(file);
-        file.preview = URL.createObjectURL(file);
-        setAva(file.preview);
-    };
+    // const handleAva = (e) => {
+    //     const file = e.target.files[0];
+    //     console.log(file);
+    //     file.preview = URL.createObjectURL(file);
+    //     setAva(file.preview);
+    // };
     console.log(ava);
     return (
         <div
@@ -40,7 +60,7 @@ export default function ImageBox({
             <input
                 className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
                 type={"file"}
-                onChange={handleAva}
+                onChange={previewFile}
             />
             <img
                 alt="avatar"
