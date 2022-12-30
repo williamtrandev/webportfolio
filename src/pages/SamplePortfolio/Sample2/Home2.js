@@ -5,6 +5,27 @@ import sampleBg from "../../../assets/sample-bg-2.jpg";
 import { Link } from "react-scroll";
 
 export default function Home2() {
+    function previewFile(e) {
+        // const preview = document.querySelector("img");
+        // const file = document.querySelector("input[type=file]").files[0];
+        const file = e.target.files[0];
+
+        const reader = new FileReader();
+
+        reader.addEventListener(
+            "load",
+            () => {
+                // convert image file to base64 string
+                setAva(reader.result);
+                localStorage.setItem("avaHomeSP4", reader.result);
+            },
+            false
+        );
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
     const [ava, setAva] = useState(
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT66JMH15FJkrsx2JCngUBRsxubwH6yXYTIJg&usqp=CAU"
     );
@@ -57,11 +78,11 @@ export default function Home2() {
                     <input
                         className="absolute opacity-0 top-0 left-0 w-full h-full cursor-pointer"
                         type={"file"}
-                        onChange={handleAva}
+                        onChange={previewFile}
                     />
                     <img
                         src={ava}
-                        className="rounded-2xl mx-auto w-[250px] md:w-full "
+                        className="rounded-2xl mx-auto w-[300px] md:w-full h-[300px] object-cover"
                     />
                 </div>
             </div>

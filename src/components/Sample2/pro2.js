@@ -1,11 +1,37 @@
+import { useState } from "react";
 function Pro2({ item }) {
+    function previewFile(e) {
+        // const preview = document.querySelector("img");
+        // const file = document.querySelector("input[type=file]").files[0];
+        const file = e.target.files[0];
+
+        const reader = new FileReader();
+
+        reader.addEventListener(
+            "load",
+            () => {
+                // convert image file to base64 string
+                setAva(reader.result);
+                localStorage.setItem("avaHomeSP4", reader.result);
+            },
+            false
+        );
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+    const [ava, setAva] = useState(item.src);
     return (
         <>
-            <img
-                src={item.src}
-                alt="ava"
-                className="rounded-md duration-200 hover:scale-100"
-            ></img>
+            <div className="relative">
+                <input
+                    className="absolute opacity-0 top-0 left-0 w-[100%] h-[100%]"
+                    type={"file"}
+                    onChange={previewFile}
+                />
+                <img src={ava} alt="project-img" className="w-full object-cover h-[200px]" />
+            </div>
             <div className="flex items-center flex-col justify-center">
                 <p
                     contentEditable

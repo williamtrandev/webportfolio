@@ -2,10 +2,31 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 export default function About2() {
+    function previewFile(e) {
+        // const preview = document.querySelector("img");
+        // const file = document.querySelector("input[type=file]").files[0];
+        const file = e.target.files[0];
+
+        const reader = new FileReader();
+
+        reader.addEventListener(
+            "load",
+            () => {
+                // convert image file to base64 string
+                setAva(reader.result);
+                localStorage.setItem("avaHomeSP4", reader.result);
+            },
+            false
+        );
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
     const [ava, setAva] = useState(
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFMlLUP8BsN9CK3yP_mbKAJCMVX52SLCbmoNeu9_ai1Bu8UoPO7ffpTDZZ8mFiF-SleIM&usqp=CAU"
     );
-    
+
     // Xoa anh trong bo nho moi lan doi anh
     useEffect(() => {
         return () => {
@@ -40,7 +61,7 @@ export default function About2() {
                         <input
                             className="absolute opacity-0 top-0 left-0 w-[100%] h-[100%] cursor-pointer"
                             type={"file"}
-                            onChange={handleAva}
+                            onChange={previewFile}
                         />
                         <img
                             src={ava}
