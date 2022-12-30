@@ -7,15 +7,14 @@ import { useState, useEffect } from "react";
 
 export default function Contact1() {
     const wrapper = document.getElementsByClassName("Page")[0];
+    const height = window.innerHeight-50 ;
+    const width = (window.innerWidth - 348) * 0.9;
     const [state, setState] = useState({
         height: wrapper.offsetHeight,
         width: wrapper.offsetWidth,
     });
-    // const heightBox = wrapper.offsetHeight;
-    // const widthBox = wrapper.offsetWidth;
-    // console.log(heightBox, widthBox);
-    // console.log(dimensions.width, dimensions.height);
-    // console.log(typeof(size));
+
+    console.log(state.width, state.height);
     return (
         <div
             id="movable"

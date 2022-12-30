@@ -43,6 +43,7 @@ function CreatePortfolio() {
     //     setEle([...ele, arr[name][id - 1]]);
     // };
     // console.log(document.styleSheets);
+    localStorage.setItem("id_element",10052);
     return (
         <div className="bg-slate-100 flex">
             <Sidebar></Sidebar>

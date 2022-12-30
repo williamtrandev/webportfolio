@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Rnd } from "react-rnd";
+import Plusbin from "../Plusbin/Plusbin";
+
 
 function Image({
     parent = "parent",
@@ -9,6 +11,7 @@ function Image({
     x = 50,
     y = 50,
     classname = "",
+    datakey = localStorage.getItem("id_element"),
     src,
 }) {
     const [ava, setAva] = useState(
@@ -16,6 +19,8 @@ function Image({
             ? src 
             : "https://yesoffice.com.vn/wp-content/themes/zw-theme//assets/images/default.jpg"
     );
+    var id=  localStorage.getItem("id_element") - 1;
+    localStorage.setItem("id_element", id+3)
     function changeIMG() {
         let input = document.createElement("input");
         input.type = "file";
@@ -37,6 +42,17 @@ function Image({
         borderradius: "10px",
     };
 
+    function handledelete(e){
+        // const list = e.target.parentElement.parentElement.parentElement.parentElement.parentElement;
+        // const child = e.target.parentElement.parentElement.parentElement.parentElement;
+        // console.log(child);
+        // child.style.display = "none";
+        const id = e.target.parentElement.parentElement.getAttribute("data-key");
+        const data = document.getElementById(id);
+        data.remove();
+       
+    }
+
     return (
         <Rnd
             default={{
@@ -48,9 +64,11 @@ function Image({
             style={style1}
             minWidth={10}
             minHeight={10}
-            bounds={parent}
+            bounds={parent.parent}
+            id= {datakey}
+
         >
-            <div className="group relative w-full h-full ">
+            <div keyIndex= {datakey} className="group  congviec relative w-full h-full ">
                 <label
                     onDoubleClick={changeIMG}
                     htmlFor="img"
@@ -60,10 +78,13 @@ function Image({
                     src={ava}
                     alt="avatar"
                     className={
-                        (ava ? "" : "hidden ") + "h-full w-full object-cover "
+                        (ava ? "" : "hidden ") + "h-full   w-full object-cover "
                     }
                 />
+                <Plusbin keyIndex= {datakey} hiddenPlus = "hidden" classname="dieukhien top-0 opacity-0 -left-7" onClickfuncDELETE={handledelete}/>
             </div>
+        
+
         </Rnd>
     );
 }
