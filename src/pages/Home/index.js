@@ -1,6 +1,6 @@
-import backgroundImg from "../../assets/home-create2.jpg";
+import backgroundImg from "../../assets/bg-home.jpg";
+// import backgroundImg from "../../assets/bg-sample3.jpg";
 import btnImg from "../../assets/btn-img.jpg";
-import Header from "../../components/Layout/components/Header";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";

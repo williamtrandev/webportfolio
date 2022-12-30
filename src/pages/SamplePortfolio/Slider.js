@@ -58,7 +58,7 @@ const Slider = () => {
     };
 
     return (
-        <div className="mx-auto overflow-hidden w-full h-screen relative">
+        <div className="mx-auto overflow-hidden w-[80%] h-[600px] relative">
             <div
                 className="whitespace-nowrap transition duration-1000"
                 style={{ transform: `translate3d(${-currIndex * 100}%, 0, 0)` }}
@@ -67,7 +67,7 @@ const Slider = () => {
                 {/* {slides.map((slide) => (
                     
                         <div
-                            className="inline-block h-screen w-full bg-cover bg-center rounded-lg"
+                            className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
                             key={slide.id}
                             style={{ backgroundImage: `url(${slide.url})` }}
                         ></div>
@@ -75,19 +75,19 @@ const Slider = () => {
                 ))} */}
                 <Link to={config.routes.sample2}>
                     <div
-                        className="inline-block h-screen w-full bg-cover bg-center rounded-lg"
+                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
                         style={{ backgroundImage: `url(${img1})` }}
                     ></div>
                 </Link>
                 <Link to={config.routes.sample3}>
                     <div
-                        className="inline-block h-screen w-full bg-cover bg-center rounded-lg"
+                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
                         style={{ backgroundImage: `url(${img2})` }}
                     ></div>
                 </Link>
                 <Link to={config.routes.sample4}>
                     <div
-                        className="inline-block h-screen w-full bg-cover bg-center rounded-lg"
+                        className="inline-block w-full h-[600px] bg-cover bg-center rounded-lg"
                         style={{ backgroundImage: `url(${img3})` }}
                     ></div>
                 </Link>

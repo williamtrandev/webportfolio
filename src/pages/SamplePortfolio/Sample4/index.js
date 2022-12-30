@@ -9,6 +9,7 @@ import { MdLightMode, MdDarkMode } from "react-icons/md";
 import "./style.css";
 import "./style-switcher.css";
 import { useState, useEffect } from "react";
+import { BsDownload } from "react-icons/bs";
 
 function Sample4() {
     function handleColor(newColor) {
@@ -41,38 +42,84 @@ function Sample4() {
     }, [isDark]);
     // update background body
     const bgBody = isDark ? "dark" : "bg-[#f2f2fc]";
-    function handlehidden(e){
-
+    function handlehidden(e) {
         let id = e.target.id;
-        if(id == 7){
+        if (id == 7) {
             var skill = document.getElementById("Skill_Sample4");
-            if(e.target.checked){
-                
-            skill.classList.add("hidden")
-            }else{
-                skill.classList.remove("hidden")
+            if (e.target.checked) {
+                skill.classList.add("hidden");
+            } else {
+                skill.classList.remove("hidden");
             }
-        }else if(id == 8){
+        } else if (id == 8) {
             var skill = document.getElementById("edu_sample4");
-            if(e.target.checked){
-                
-            skill.classList.add("hidden")
-            }else{
-                skill.classList.remove("hidden")
+            if (e.target.checked) {
+                skill.classList.add("hidden");
+            } else {
+                skill.classList.remove("hidden");
             }
-        }else if(id == 9){
+        } else if (id == 9) {
             var skill = document.getElementById("exp_sample4");
-            if(e.target.checked){
-                
-            skill.classList.add("hidden")
-            }else{
-                skill.classList.remove("hidden")
+            if (e.target.checked) {
+                skill.classList.add("hidden");
+            } else {
+                skill.classList.remove("hidden");
             }
         }
+    }
+    const handleClick = () => {
+        const webBody = document.getElementById("SP4");
+        var css = [];
 
-      }
+        for (var sheeti = 0; sheeti < document.styleSheets.length; sheeti++) {
+            var sheet = document.styleSheets[sheeti];
+            var rules = "cssRules" in sheet ? sheet.cssRules : sheet.rules;
+            for (var rulei = 0; rulei < rules.length; rulei++) {
+                var rule = rules[rulei];
+                if ("cssText" in rule)
+                    css.push(`<style>` + rule.cssText + `</style>`);
+                else
+                    css.push(
+                        rule.selectorText +
+                            " {\n" +
+                            rule.style.cssText +
+                            "\n}\n"
+                    );
+            }
+        }
+        css = css.join("\n");
+        // console.log(css.join("\n"));
+        const data = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Web Portfolio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <style>
+        ${css}
+        </style
+        <body>
+            ${webBody.outerHTML}
+        </body>
+        </html>`;
+        const filename = "webportfolio.html";
+        const blob = new Blob([data], { type: "text/plain" });
+        if (window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, filename);
+        } else {
+            const elem = window.document.createElement("a");
+            elem.href = window.URL.createObjectURL(blob);
+            elem.download = filename;
+            document.body.appendChild(elem);
+            elem.click();
+            document.body.removeChild(elem);
+        }
+    };
     return (
-        <div className={`w-full h-screen ${bgBody}`}>
+        <div id="SP4" className={`w-full h-screen ${bgBody}`}>
             <Sidebar></Sidebar>
             <div className="xl:pl-[270px]">
                 <Home></Home>
@@ -138,18 +185,48 @@ function Sample4() {
                 </div>
                 <h4 className="py-2">Block or Hidden</h4>
                 <div className="ml-8">
-                            <input type={"checkbox"} id="7" name='7' value={'7'} onChange={handlehidden} />
-                            <label className="text-base" htmlFor='7'> Skills</label>
-                            </div>
-                            <div className="ml-8">
-                            <input type={"checkbox"} id="8" name='8' value={'8'} onChange={handlehidden} />
-                            <label className="text-base" htmlFor='8'> Edu</label>
-                            </div>
-                            <div className="ml-8">
-                            <input type={"checkbox"} id="9" name='9' value={'9'} onChange={handlehidden} />
-                            <label className="text-base" htmlFor='9'> Exp</label>
-                            </div>
-
+                    <input
+                        type={"checkbox"}
+                        id="7"
+                        name="7"
+                        value={"7"}
+                        onChange={handlehidden}
+                    />
+                    <label className="text-base" htmlFor="7">
+                        {" "}
+                        Skills
+                    </label>
+                </div>
+                <div className="ml-8">
+                    <input
+                        type={"checkbox"}
+                        id="8"
+                        name="8"
+                        value={"8"}
+                        onChange={handlehidden}
+                    />
+                    <label className="text-base" htmlFor="8">
+                        {" "}
+                        Edu
+                    </label>
+                </div>
+                <div className="ml-8">
+                    <input
+                        type={"checkbox"}
+                        id="9"
+                        name="9"
+                        value={"9"}
+                        onChange={handlehidden}
+                    />
+                    <label className="text-base" htmlFor="9">
+                        {" "}
+                        Exp
+                    </label>
+                </div>
+                <h4 className="pt-2">Download Portfolio</h4>
+                <button className="ml-8" onClick={handleClick}>
+                    <BsDownload className="iconDownload"></BsDownload>
+                </button>
             </div>
         </div>
     );

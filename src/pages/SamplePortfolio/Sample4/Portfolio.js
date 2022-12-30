@@ -7,64 +7,57 @@ export default function Portfolio() {
     const portfolios = [
         {
             id: 1,
-            name: "Tên Web",
+            name: "Web CV",
             Category: "Web design",
             Client: "ASU company",
-            date: "01 March, 2020",
+            date: "November 30, 2022",
             url: "www.example.com",
-            congdung:
-                "Do hiện nay khi buôn bán, ta thường sử dụng phần mềm Excel.",
+            congdung: "Show your infomation about job,...",
         },
         {
             id: 2,
-            name: "Tên Web",
-            Category: "Web design",
-            Client: "ASU company",
-            date: "01 March, 2020",
+            name: "Youtube App",
+            Category: "Mobile App",
+            Client: "TSimple company",
+            date: "November 30, 2022",
             url: "www.example.com",
-            congdung:
-                "Do hiện nay khi buôn bán, ta thường sử dụng phần mềm Excel.",
+            congdung: "Watching interesting clips,...",
         },
         {
             id: 3,
-
-            name: "Tên Web",
-            Category: "Web design",
-            Client: "ASU company",
-            date: "01 March, 2020",
+            name: "Chat GPT",
+            Category: "Artificial Intelligence",
+            Client: "OpenAI",
+            date: "November 30, 2022",
             url: "www.example.com",
-            congdung:
-                "Do hiện nay khi buôn bán, ta thường sử dụng phần mềm Excel.",
+            congdung: "Answer followup questions",
         },
         {
             id: 4,
-            name: "Tên Web",
+            name: "Web CV",
             Category: "Web design",
             Client: "ASU company",
-            date: "01 March, 2020",
+            date: "November 30, 2022",
             url: "www.example.com",
-            congdung:
-                "Do hiện nay khi buôn bán, ta thường sử dụng phần mềm Excel.",
+            congdung: "Show your infomation about job,...",
         },
         {
             id: 5,
-            name: "Tên Web",
-            Category: "Web design",
-            Client: "ASU company",
-            date: "01 March, 2020",
+            name: "Youtube App",
+            Category: "Mobile App",
+            Client: "TSimple company",
+            date: "November 30, 2022",
             url: "www.example.com",
-            congdung:
-                "Do hiện nay khi buôn bán, ta thường sử dụng phần mềm Excel.",
+            congdung: "Watching interesting clips,...",
         },
         {
             id: 6,
-            name: "Tên Web",
-            Category: "Web design",
-            Client: "ASU company",
-            date: "01 March, 2020",
+            name: "Chat GPT",
+            Category: "Artificial Intelligence",
+            Client: "OpenAI",
+            date: "November 30, 2022",
             url: "www.example.com",
-            congdung:
-                "Do hiện nay khi buôn bán, ta thường sử dụng phần mềm Excel.",
+            congdung: "Answer followup questions",
         },
     ];
 
@@ -119,7 +112,11 @@ export default function Portfolio() {
                 <div className="row">
                     {pfo.map((item) => (
                         <div className="portfolio-item padd-15 relative congviec">
-                            <Pro MenuItem={item} className={"shadow-dark"} colorChange={"colorChange"}/>
+                            <Pro
+                                MenuItem={item}
+                                className={"shadow-dark"}
+                                colorChange={"colorChange"}
+                            />
                             <Plusbin
                                 keyIndex={item.id}
                                 classname={"dieukhien opacity-0 -left-2 -top-0"}

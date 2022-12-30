@@ -20,7 +20,11 @@ const publicRoutes = [
         component: CreatePortfolio,
         layout: CreatePortfolio,
     },
-    { path: config.routes.SamplePortfolio, component: SamplePortfolio },
+    {
+        path: config.routes.SamplePortfolio,
+        component: SamplePortfolio,
+        layout: SampleLayout,
+    },
     { path: config.routes.sample1, component: sample1, layout: SampleLayout },
     { path: config.routes.sample2, component: sample2, layout: SampleLayout },
     { path: config.routes.sample3, component: sample3, layout: SampleLayout },

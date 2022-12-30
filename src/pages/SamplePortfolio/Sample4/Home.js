@@ -1,10 +1,8 @@
-
+import avatar from "../../../assets/avatar-sample4.jpg";
 import { useState, useEffect } from "react";
 export default function Home() {
-    const [ava, setAva] = useState(
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFMlLUP8BsN9CK3yP_mbKAJCMVX52SLCbmoNeu9_ai1Bu8UoPO7ffpTDZZ8mFiF-SleIM&usqp=CAU"
-    );
-    
+    const [ava, setAva] = useState(avatar);
+
     // Xoa anh trong bo nho moi lan doi anh
     useEffect(() => {
         return () => {
@@ -67,16 +65,14 @@ export default function Home() {
                         </button>
                     </div>
                     <div className="home-img padd-15 relative">
-                        <input
-                            className="absolute opacity-0 top-0 left-0 w-full h-full"
-                            type={"file"}
-                            onChange={handleAva}
-                        />
-                        <img
-                            className="w-[300px]"
-                            src={ava}
-                            alt="avatar"
-                        />
+                        <div className="wrapper relative w-[250px] z-10">
+                            <input
+                                className="absolute opacity-0 top-0 left-0 w-full h-full z-10"
+                                type={"file"}
+                                onChange={handleAva}
+                            />
+                            <img className="object-cover" src={ava} alt="avatar" />
+                        </div>
                     </div>
                 </div>
             </div>

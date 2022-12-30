@@ -42,6 +42,12 @@
     font-weight: 600;
     text-transform: capitalize;
 }
+.style-switcher div label {
+    color: var(--text-black-700);
+}
+.style-switcher button .iconDownload {
+    color: var(--text-black-700);
+}
 .style-switcher .colors {
     display: flex;
     flex-wrap: wrap;

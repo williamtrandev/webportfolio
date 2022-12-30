@@ -19,7 +19,7 @@ const Navbar = () => {
         },
         {
             id: 2,
-            title: "Build website",
+            title: "Build Website",
             link: "/CreatePortfolio",
         },
     ];
@@ -53,7 +53,7 @@ const Navbar = () => {
                     ))}
                     <div className="hover:text-pink-500 duration-500 text-white md:ml-10 my-7 text-2xl font-medium cursor-pointer">
                         <p className="font-dance" onClick={handleOpen}>
-                            Contact us
+                            Contact Us
                         </p>
                         <Modal
                             open={openModal}

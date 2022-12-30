@@ -10,33 +10,37 @@ export default function NavSidebar() {
         {
             id: 1,
             icon: <IoHomeOutline size={30} />,
-            title: "Trang chủ",
+            title: "Home",
             link: "/",
         },
         {
             id: 2,
             icon: <IoNewspaper size={30} />,
-            title: "Tạo mới",
+            title: "Create",
             link: "/CreatePortfolio",
         },
         {
             id: 3,
             icon: <IoReader size={30} />,
-            title: "Mẫu",
+            title: "Sample",
             link: "/SamplePortfolio",
         },
     ];
     return (
-        <div className="hidden lg:flex flex-col top-[40%] left-0 fixed z-30 opacity-0 hover:opacity-100 transition-all duration-300 ease-linear">
+        <div className="hidden lg:flex flex-col top-[50%] -translate-y-1/2 left-0 fixed !z-[100] opacity-0 hover:opacity-100  transition-all duration-300 ease-linear animate-[fadeIn_3s_ease-in-out_alternate_infinite] hover:animate-none">
             <ul>
-                {navigations.map(({ id, icon, link }) => (
+                {navigations.map(({ id, icon, title, link }) => (
                     <li
                         key={id}
-                        className="flex justify-between items-center cursor-pointer p-2 mb-2 h-1/4 hover:scale-105 hover:bg-blue-500 duration-300 bg-gray-500"
+                        className="flex justify-between items-center cursor-pointer p-2 mb-2 h-1/4 hover:scale-105 hover:bg-blue-500 hover:rounded-md duration-300 ml-[-85px] hover:ml-0 bg-gray-500 w-[140px]"
                     >
-                        <span className="flex justify-between items-center w-full text-xl text-white">
-                            <Link to={link}>{icon}</Link>
-                        </span>
+                        <div className="flex justify-center items-center w-full text-xl text-white">
+                            <Link to={link}>
+                                <div className="flex justify-between items-center w-[110px]">
+                                    <p>{title}</p> {icon}
+                                </div>
+                            </Link>
+                        </div>
                     </li>
                 ))}
             </ul>

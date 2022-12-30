@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function Pro({ MenuItem, className = "" , colorChange}) {
     const [ava, setAva] = useState(
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFMlLUP8BsN9CK3yP_mbKAJCMVX52SLCbmoNeu9_ai1Bu8UoPO7ffpTDZZ8mFiF-SleIM&usqp=CAU"
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq47DlVprbeEcxdYcQYNKwyZ9OOoQmvBSr6A&usqp=CAU"
     );
 
     // Xoa anh trong bo nho moi lan doi anh
@@ -24,7 +24,7 @@ function Pro({ MenuItem, className = "" , colorChange}) {
                     type={"file"}
                     onChange={handleAva}
                 />
-                <img src={ava} alt="project-img" />
+                <img src={ava} alt="project-img" className="h-[200px]" />
             </div>
             <h2
                 className={`text-base ${colorChange}   font-bold text-center px-1`}
