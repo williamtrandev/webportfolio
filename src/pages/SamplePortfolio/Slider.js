@@ -79,7 +79,7 @@ const Slider = () => {
                 </Link>
                 <Link to={config.routes.sample3}>
                     <div
-                        className={`inline-block ${width} ${height} bg-cover bg-center rounded-lg`}
+                        className={"inline-block rounded-lg"}
                         style={{
                             width: `${width}`,
                             height: `${height}`,
@@ -92,7 +92,7 @@ const Slider = () => {
                 </Link>
                 <Link to={config.routes.sample4}>
                     <div
-                        className={`inline-block ${width} ${height} bg-cover bg-center rounded-lg`}
+                        className={"inline-block rounded-lg"}
                         style={{
                             width: `${width}`,
                             height: `${height}`,

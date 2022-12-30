@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { renderToString } from "react-dom/server";
 import { SiElement } from "react-icons/si";
 import { CgComponents } from "react-icons/cg";
 import { AiOutlineAppstore, AiOutlineCloseCircle } from "react-icons/ai";
@@ -14,6 +15,7 @@ import { HiHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import config from "../../config";
 import { type } from "@testing-library/user-event/dist/type";
+import Contact1 from "../../components/Porfolio1/Contact1";
 export default function Sidebar() {
     const sampleItems = [
         {
@@ -181,14 +183,25 @@ export default function Sidebar() {
     };
     const handleDownload = () => {
         const webBody = document.getElementById("portfolio").cloneNode(true);
+        // const cloneContact = (
+        //     <Contact1 width={window.innerWidth} height={window.innerHeight} />
+        // );
+        // const test = renderToString(cloneContact);
+        // console.log("clone ct", test);
         const pages = webBody.getElementsByClassName("Page");
-        console.log(pages);
-
+        const editItems = webBody.getElementsByClassName("canEdit");
+        [...editItems].forEach((item) => {
+            item.removeAttribute("contenteditable");
+            item.classList.add("!cursor-default");
+        });
+        const draggableItems =
+            webBody.getElementsByClassName("react-draggable");
+        [...draggableItems].forEach((item) => item.removeChild(item.lastChild));
         const hiddenAdd = webBody.getElementsByClassName("removeAdd")[0];
         hiddenAdd.classList.add("hidden");
         [...pages].forEach((pageItem) => {
             const div = document.createElement("div");
-            div.classList.add("relative", "w-full", "h-full");
+            div.classList.add("relative", "w-[1100px]", "h-[600px]");
             const childItems = pageItem.getElementsByClassName("changeClass");
             [...childItems].forEach((child) => {
                 child.classList.add("!h-screen");
@@ -199,10 +212,19 @@ export default function Sidebar() {
                 "!max-w-full",
                 "!h-screen",
                 "!mt-0",
-                "!border-none"
+                "!border-none",
+                "flex",
+                "justify-center"
             );
+
+            // [...div.children].forEach((item) => {
+            //     item.classList.contains("hasBg") &&
+            //         item.classList.add("!bg-none") &&
+            //         console.log(div.style.background);
+            //     console.log(item.classList.contains("hasBg"));
+            //     console.log(div.style.background);
+            // });
             pageItem.appendChild(div);
-            // console.log(pageItem);
         });
         const data = `<!DOCTYPE html>
         <html lang="en">

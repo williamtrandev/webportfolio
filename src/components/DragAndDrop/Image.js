@@ -50,7 +50,7 @@ function Image({
             minHeight={10}
             bounds={parent}
         >
-            <div className="group relative w-full h-full ">
+            <div className="canEdit group relative w-full h-full ">
                 <label
                     onDoubleClick={changeIMG}
                     htmlFor="img"

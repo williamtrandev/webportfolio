@@ -43,7 +43,7 @@ export default function Box({
         >
             {enable && <Toolbar isEnable={true} />}
             <div
-                className={`group w-full h-full border relative ${classname}`}
+                className={`canEdit group w-full h-full border relative ${classname}`}
                 contentEditable
                 suppressContentEditableWarning={true}
                 spellCheck={false}
