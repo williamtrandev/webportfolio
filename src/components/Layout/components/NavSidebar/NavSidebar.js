@@ -17,7 +17,7 @@ export default function NavSidebar() {
             id: 2,
             icon: <IoNewspaper size={30} />,
             title: "Create",
-            link: "/CreatePortfolio",
+            link: "/Background",
         },
         {
             id: 3,

@@ -2,7 +2,7 @@
     "name": "web-portfolio",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://WilliamTran2k3.github.io/webportfolio",
+    "homepage": "https://WilliamTran2k3.github.io/",
     "dependencies": {
         "@emotion/react": "^11.10.5",
         "@emotion/styled": "^11.10.5",
