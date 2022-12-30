@@ -24,7 +24,7 @@ export default function ImageBox({
     return (
         <div
             id="ImageBox"
-            className={`group relative ${minHeight} ${maxHeight} ${minWidth} ${maxWidth} h-[250px] bg-slate-100 flex-grow-0 flex-shrink-0 ${basisWidth} flex justify-center items-center border-2 border-dashed border-slate-300 hover:border-2 hover:border-solid hover:border-blue-400`}
+            className={`group relative ${minHeight} ${maxHeight} ${minWidth} ${maxWidth} h-[200px] bg-slate-100 flex-grow-0 flex-shrink-0 ${basisWidth} flex justify-center items-center border-2 border-dashed border-slate-300 hover:border-2 hover:border-solid hover:border-blue-400`}
         >
             <div
                 className={

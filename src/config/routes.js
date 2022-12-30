@@ -2,6 +2,7 @@ const routes = {
     home: '/',
     CreatePortfolio: '/CreatePortfolio',
     // profile: '/@:nickname',
+    Background: '/Background',
     PortfolioCreated: '/PortfolioCreated',
     SamplePortfolio: '/SamplePortfolio',
     sample1: '/SamplePortfolio/sample1',

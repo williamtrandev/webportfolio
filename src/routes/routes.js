@@ -7,6 +7,7 @@ import sample1 from "../pages/SamplePortfolio/Sample1";
 import sample2 from "../pages/SamplePortfolio/Sample2";
 import sample3 from "../pages/SamplePortfolio/Sample3";
 import sample4 from "../pages/SamplePortfolio/Sample4";
+import Background from "../pages/Background";
 
 import Home from "../pages/Home";
 import SampleLayout from "../components/Layout/SampleLayout";
@@ -26,6 +27,7 @@ const publicRoutes = [
         layout: SampleLayout,
     },
     { path: config.routes.sample1, component: sample1, layout: SampleLayout },
+    { path: config.routes.Background, component: Background},
     { path: config.routes.sample2, component: sample2, layout: SampleLayout },
     { path: config.routes.sample3, component: sample3, layout: SampleLayout },
     { path: config.routes.sample4, component: sample4, layout: SampleLayout },

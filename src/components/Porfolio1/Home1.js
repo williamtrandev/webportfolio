@@ -1,10 +1,10 @@
 import Box from "../DragAndDrop/Box";
 import Icon from "../DragAndDrop/Icon";
-function Home1() {
+function Home1({classname = "bg-yellow-500"}) {
     const height = window.innerHeight;
     const width = (window.innerWidth - 348) * 0.9;
     return (
-        <div className="w-full h-[600px] relative bg-yellow-500 changeClass">
+        <div className={`w-full h-[600px] relative  changeClass ${classname}` }>
             <Box
                 item={"BRAND"}
                 width={110}

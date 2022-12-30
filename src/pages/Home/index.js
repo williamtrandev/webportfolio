@@ -36,7 +36,7 @@ function Home() {
                                 Create your
                             </p>
                             <div>
-                                <Link to={"/CreatePortfolio"}>
+                                <Link to={"/Background"}>
                                     <button
                                         className={`w-fit lg:px-6 lg:py-3 px-4 py-2 my-2 flex items-center bg-black rounded-md cursor-pointer hover:bg-white font-zendots lg:text-3xl text-xl text-white hover:text-black ease-in-out duration-300 ${style}`}
                                     >
